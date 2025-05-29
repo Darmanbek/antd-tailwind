@@ -1,0 +1,23 @@
+@import "global.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: #eaeaea transparent;
+	}
+
+	body {
+		@apply bg-background text-foreground font-ant;
+	}
+
+	pre,
+	code,
+	kbd,
+	samp {
+		@apply font-ant-code;
+	}
+}
