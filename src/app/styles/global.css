@@ -3,6 +3,8 @@
 @import "box-shadow.css";
 @import "font.css";
 
+@import "components/layout.css";
+
 @tailwind base;
 
 @layer base {

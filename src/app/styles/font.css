@@ -4,26 +4,33 @@
 	:root {
 		--ant-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 		--ant-font-family-code: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-		--ant-font-size: 14px;
-		--ant-font-size-sm: 12px;
-		--ant-font-size-lg: 16px;
-		--ant-font-size-xl: 20px;
-		--ant-font-size-heading-1: 38px;
-		--ant-font-size-heading-2: 30px;
-		--ant-font-size-heading-3: 24px;
-		--ant-font-size-heading-4: 20px;
-		--ant-font-size-heading-5: 16px;
+
+		--ant-font-size-sm: 0.75rem;
+		--ant-font-size: 0.875rem;
+		--ant-font-size-lg: 1rem;
+		--ant-font-size-xl: 1.25rem;
+
+
+		--ant-line-height-sm: 1.6666666666666667;
 		--ant-line-height: 1.5714285714285714;
 		--ant-line-height-lg: 1.5;
-		--ant-line-height-sm: 1.6666666666666667;
-		--ant-font-height: 22px;
-		--ant-font-height-lg: 24px;
-		--ant-font-height-sm: 20px;
+
+		--ant-font-height-sm: 1.25rem;
+		--ant-font-height: 1.375rem;
+		--ant-font-height-lg: 1.5rem;
+
+		--ant-font-size-heading-1: 2.375rem;
+		--ant-font-size-heading-2: 1.875rem;
+		--ant-font-size-heading-3: 1.5rem;
+		--ant-font-size-heading-4: 1.25rem;
+		--ant-font-size-heading-5: 1rem;
+
 		--ant-line-height-heading-1: 1.2105263157894737;
 		--ant-line-height-heading-2: 1.2666666666666666;
 		--ant-line-height-heading-3: 1.3333333333333333;
 		--ant-line-height-heading-4: 1.4;
 		--ant-line-height-heading-5: 1.5;
+
 		--ant-font-weight-strong: 600;
 	}
 }

@@ -3,6 +3,8 @@
 @layer base {
 	:root {
 		--ant-line-width: 1px;
+		--ant-line-width-bold: 2px;
+		--ant-line-width-focus: 3px;
 		/*--ant-line-type: solid;*/
 
 		--ant-motion-duration-fast: 0.1s;
@@ -17,55 +19,55 @@
 		--ant-motion-ease-in-back: cubic-bezier(0.71, -0.46, 0.88, 0.6);
 		--ant-motion-ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
 		--ant-motion-ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
-		--ant-border-radius: 6px;
-		--ant-size-popup-arrow: 16px;
-		--ant-control-height: 32px;
+		--ant-border-radius: 0.375rem;
+		--ant-size-popup-arrow: 1rem;
 		--ant-z-index-base: 0;
 		--ant-z-index-popup-base: 1000;
 		--ant-opacity-image: 1;
 
-		--ant-control-height-sm: 24px;
-		--ant-control-height-xs: 16px;
-		--ant-control-height-lg: 40px;
+		--ant-control-height-xs: 1rem;
+		--ant-control-height-sm: 1.5rem;
+		--ant-control-height: 2rem;
+		--ant-control-height-lg: 2.5rem;
 
-		--ant-line-width-bold: 2px;
-		--ant-border-radius-xs: 2px;
-		--ant-border-radius-sm: 4px;
-		--ant-border-radius-lg: 8px;
-		--ant-border-radius-outer: 4px;
+		--ant-border-radius-xs: 0.125rem;
+		--ant-border-radius-sm: 0.25rem;
+		--ant-border-radius-lg: 0.5rem;
+		--ant-border-radius-outer: 0.25rem;
 
 		--ant-opacity-loading: 0.65;
 		--ant-link-decoration: none;
 		--ant-link-hover-decoration: none;
 		--ant-link-focus-decoration: none;
-		--ant-control-padding-horizontal: 12px;
-		--ant-control-padding-horizontal-sm: 8px;
-		--ant-padding-xxs: 4px;
-		--ant-padding-xs: 8px;
-		--ant-padding-sm: 12px;
-		--ant-padding: 16px;
-		--ant-padding-md: 20px;
-		--ant-padding-lg: 24px;
-		--ant-padding-xl: 32px;
-		--ant-padding-content-horizontal-lg: 24px;
-		--ant-padding-content-vertical-lg: 16px;
-		--ant-padding-content-horizontal: 16px;
-		--ant-padding-content-vertical: 12px;
-		--ant-padding-content-horizontal-sm: 16px;
-		--ant-padding-content-vertical-sm: 8px;
-		--ant-margin-xxs: 4px;
-		--ant-margin-xs: 8px;
-		--ant-margin-sm: 12px;
-		--ant-margin: 16px;
-		--ant-margin-md: 20px;
-		--ant-margin-lg: 24px;
-		--ant-margin-xl: 32px;
-		--ant-margin-xxl: 48px;
 
-		--ant-font-size-icon: 12px;
-		--ant-line-width-focus: 3px;
+		--ant-control-padding-horizontal: 0.75rem;
+		--ant-control-padding-horizontal-sm: 0.5rem;
+		--ant-padding-xxs: 0.25rem;
+		--ant-padding-xs: 0.5rem;
+		--ant-padding-sm: 0.75rem;
+		--ant-padding: 1rem;
+		--ant-padding-md: 1.25rem;
+		--ant-padding-lg: 1.5rem;
+		--ant-padding-xl: 2rem;
+		--ant-padding-content-horizontal-lg: 1.5rem;
+		--ant-padding-content-vertical-lg: 1rem;
+		--ant-padding-content-horizontal: 1rem;
+		--ant-padding-content-vertical: 0.75rem;
+		--ant-padding-content-horizontal-sm: 1rem;
+		--ant-padding-content-vertical-sm: 0.5rem;
+
+		--ant-margin-xxs: 0.25rem;
+		--ant-margin-xs: 0.5rem;
+		--ant-margin-sm: 0.75rem;
+		--ant-margin: 1rem;
+		--ant-margin-md: 1.25rem;
+		--ant-margin-lg: 1.5rem;
+		--ant-margin-xl: 2rem;
+		--ant-margin-xxl: 3rem;
+
+		--ant-font-size-icon: 0.75rem;
 		--ant-control-outline-width: 2px;
-		--ant-control-interactive-size: 16px;
+		--ant-control-interactive-size: 1rem;
 	}
 
 }

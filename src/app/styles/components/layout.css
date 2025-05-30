@@ -1,0 +1,38 @@
+@tailwind base;
+
+@layer base {
+	:root {
+		--ant-layout-body-bg: var(--ant-color-bg-layout);
+
+		--ant-layout-header-bg: #001529;
+		--ant-layout-header-height: 4rem;
+		--ant-layout-header-padding: 0 2.5rem;
+		--ant-layout-header-color: #fff;
+
+		--ant-layout-footer-padding: 1.5rem 2.5rem;
+		--ant-layout-footer-bg: var(--ant-color-bg-layout);
+		--ant-layout-footer-color: var(--ant-color-text);
+
+
+		--ant-layout-sider-bg: #001529;
+		--ant-layout-sider-color: #fff;
+
+		--ant-layout-trigger-height: 3rem;
+		--ant-layout-trigger-bg: #002140;
+		--ant-layout-trigger-color: #fff;
+
+		--ant-layout-zero-trigger-width: 2.5rem;
+		--ant-layout-zero-trigger-height: 2.5rem;
+	}
+
+	.light {
+		--ant-layout-header-bg: var(--ant-color-bg-container);
+		--ant-layout-header-color: var(--ant-color-text);
+
+		--ant-layout-sider-bg: var(--ant-color-bg-container);
+		--ant-layout-sider-color: var(--ant-color-text);
+
+		--ant-layout-trigger-bg: var(--ant-color-bg-container);
+		--ant-layout-trigger-color: var(--ant-color-text);
+	}
+}

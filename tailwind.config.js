@@ -6,51 +6,157 @@ export default {
 		extend: {
 			fontFamily: {
 				ant: "var(--ant-font-family)",
-				"ant-code": "var(--ant-font-family-code)"
+				"ant-code": "var(--ant-font-family-code)",
+			},
+			fontSize: {
+				base: [
+					"var(--ant-font-size)",
+					{
+						lineHeight: "var(--ant-line-height)",
+					},
+				],
+				sm: [
+					"var(--ant-font-size-sm)",
+					{
+						lineHeight: "var(--ant-line-height-sm)",
+					},
+				],
+				lg: [
+					"var(--ant-font-size-lg)",
+					{
+						lineHeight: "var(--ant-line-height-lg)",
+					},
+				],
+				// lg: [
+				// 	"var(--ant-font-size-heading-5)",
+				// 	{
+				// 		lineHeight: "var(--ant-line-height-heading-5)",
+				// 	},
+				// ],
+				xl: [
+					"var(--ant-font-size-heading-4)",
+					{
+						lineHeight: "var(--ant-line-height-heading-4)",
+					},
+				],
+				"2xl": [
+					"var(--ant-font-size-heading-3)",
+					{
+						lineHeight: "var(--ant-line-height-heading-3)",
+					},
+				],
+				"3xl": [
+					"var(--ant-font-size-heading-2)",
+					{
+						lineHeight: "var(--ant-line-height-heading-2)",
+					},
+				],
+				"4xl": [
+					"var(--ant-font-size-heading-1)",
+					{
+						lineHeight: "var(--ant-line-height-heading-1)",
+					},
+				],
 			},
 			colors: {
 				background: "var(--ant-color-bg-base)",
-				layout: "var(--ant-color-bg-layout)",
 				foreground: {
 					DEFAULT: "var(--ant-color-text)",
 					secondary: "var(--ant-color-text-secondary)",
 					tertiary: "var(--ant-color-text-tertiary)",
-					quaternary: "var(--ant-color-text-quaternary)"
+					quaternary: "var(--ant-color-text-quaternary)",
 				},
 
 				primary: {
 					DEFAULT: "var(--ant-color-primary)",
-					bg: "var(--ant-color-primary-bg)"
+					bg: "var(--ant-color-primary-bg)",
 				},
 
-				container: "var(--ant-color-bg-container)"
+				layout: {
+					DEFAULT: "var(--ant-color-bg-layout)",
+					background: "var(--ant-layout-body-bg)",
+					header: {
+						DEFAULT: "var(--ant-layout-header-bg)",
+						foreground: "var(--ant-layout-header-color)",
+					},
+					sider: {
+						DEFAULT: "var(--ant-layout-sider-bg)",
+						foreground: "var(--ant-layout-sider-color)",
+					},
+					trigger: {
+						DEFAULT: "var(--ant-layout-trigger-bg)",
+						foreground: "var(--ant-layout-trigger-color)",
+					},
+					footer: {
+						DEFAULT: "var(--ant-layout-footer-bg)",
+						foreground: "var(--ant-layout-footer-color)",
+					},
+				},
+				container: {
+					DEFAULT: "var(--ant-color-bg-container)",
+				},
 			},
 			margin: {
-				xs: "var(--ant-margin-xs)"
+				xxs: "var(--ant-margin-xxs)",
+				xs: "var(--ant-margin-xs)",
+				sm: "var(--ant-margin-sm)",
+				base: "var(--ant-margin)",
+				md: "var(--ant-margin-md)",
+				lg: "var(--ant-margin-lg)",
+				xl: "var(--ant-margin-xl)",
+				xxl: "var(--ant-margin-xxl)",
+			},
+			padding: {
+				xxs: "var(--ant-padding-xxs)",
+				xs: "var(--ant-padding-xs)",
+				sm: "var(--ant-padding-sm)",
+				base: "var(--ant-padding)",
+				md: "var(--ant-padding-md)",
+				lg: "var(--ant-padding-lg)",
+				xl: "var(--ant-padding-xl)",
+
+				"layout-header": "var(--ant-layout-header-padding)",
+				"layout-footer": "var(--ant-layout-footer-padding)",
 			},
 			gap: {
-				xs: "var(--ant-margin-xs)"
+				xs: "var(--ant-margin-xs)",
 			},
 			borderWidth: {
-				DEFAULT: "var(--ant-line-width)"
+				DEFAULT: "var(--ant-line-width)",
 			},
 			borderStyle: {
-				antd: "var(--ant-line-type)"
+				antd: "var(--ant-line-type)",
+			},
+			height: {
+				xs: "var(--ant-control-height-xs)",
+				sm: "var(--ant-control-height-sm)",
+				base: "var(--ant-control-height)",
+				lg: "var(--ant-control-height-lg)",
+
+				"layout-header": "var(--ant-layout-header-height)",
+				"layout-trigger": "var(--ant-layout-trigger-height)",
+				"layout-zero-trigger": "var(--ant-layout-zero-trigger-height)",
+			},
+			width: {
+				"layout-zero-trigger": "var(--ant-layout-zero-trigger-width)",
+			},
+			lineHeight: {
+				header: "var(--ant-layout-header-height)",
 			},
 			boxShadow: {
 				DEFAULT: "var(--ant-box-shadow)",
 				secondary: "var(--ant-box-shadow-secondary)",
-				tertiary: "var(--ant-box-shadow-tertiary)"
+				tertiary: "var(--ant-box-shadow-tertiary)",
 			},
 			transitionDuration: {
 				fast: "var(--ant-motion-duration-fast)",
 				mid: "var(--ant-motion-duration-mid)",
-				slow: "var(--ant-motion-duration-slow)"
+				slow: "var(--ant-motion-duration-slow)",
 			},
 			transitionTimingFunction: {
-				"in-out": "var(--ant-motion-ease-in-out)"
-			}
-		}
+				"in-out": "var(--ant-motion-ease-in-out)",
+			},
+		},
 	},
-	plugins: []
+	plugins: [],
 }
