@@ -6,6 +6,8 @@
 
 @layer base {
 	* {
+		@apply border-border;
+		
 		scrollbar-width: thin;
 		scrollbar-color: #eaeaea transparent;
 	}

@@ -1,15 +1,17 @@
-import { type DetailedHTMLProps, forwardRef, type HTMLAttributes } from "react"
+import { Divider as RcMenuDivider } from "rc-menu"
+import type { DividerProps as RcMenuDividerProps } from "rc-menu/es/Divider"
+import { forwardRef } from "react"
+import { cx } from "src/shared/lib"
 
-export interface MenuDividerProps
-	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+export interface MenuDividerProps extends RcMenuDividerProps {
 	className?: string
 }
 
 const MenuDivider = forwardRef<HTMLDivElement, MenuDividerProps>(
-	(props, ref) => {
+	({ className, ...props }) => {
 		return (
-			<div
-				ref={ref}
+			<RcMenuDivider
+				className={cx("overflow-hidden border-t p-0", className)}
 				{...props}
 			/>
 		)

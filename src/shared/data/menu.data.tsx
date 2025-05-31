@@ -1,10 +1,6 @@
-export type MenuItem = {
-	key: string
-	type?: "group"
-	label: string
-}
+import type { MenuItemType } from "src/shared/ui/menu"
 
-export const menuData: MenuItem[] = [
+export const menuData: MenuItemType[] = [
 	{
 		key: "/",
 		label: "Components Overview",
@@ -16,6 +12,11 @@ export const menuData: MenuItem[] = [
 	},
 	{
 		key: "/general/button",
+		label: "Button",
+	},
+	{
+		key: "divider",
+		type: "divider",
 		label: "Button",
 	},
 	{

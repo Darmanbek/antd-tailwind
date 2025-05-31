@@ -6,6 +6,7 @@ import {
 	Header,
 	Layout,
 	Menu,
+	MenuDivider,
 	MenuItem,
 	MenuItemGroup,
 	Sider,
@@ -40,6 +41,8 @@ function RouteComponent() {
 										className={"my-4 border-b"}
 										title={item.label}
 									/>
+								) : item.type === "divider" ? (
+									<MenuDivider />
 								) : (
 									<MenuItem key={item.key}>{item.label}</MenuItem>
 								)

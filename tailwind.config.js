@@ -95,6 +95,10 @@ export default {
 				container: {
 					DEFAULT: "var(--ant-color-bg-container)",
 				},
+				border: {
+					DEFAULT: "var(--ant-color-border)",
+					hover: "var(--ant-color-border-hover)",
+				},
 			},
 			margin: {
 				xxs: "var(--ant-margin-xxs)",
