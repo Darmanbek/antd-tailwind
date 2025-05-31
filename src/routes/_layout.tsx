@@ -37,14 +37,11 @@ function RouteComponent() {
 								item.type === "group" ? (
 									<MenuItemGroup
 										key={item.key}
-										label={item.label}
 										className={"my-4 border-b"}
+										title={item.label}
 									/>
 								) : (
-									<MenuItem
-										key={item.key}
-										label={item.label}
-									/>
+									<MenuItem key={item.key}>{item.label}</MenuItem>
 								)
 							)}
 						</Menu>
