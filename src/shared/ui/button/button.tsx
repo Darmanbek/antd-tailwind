@@ -1,7 +1,7 @@
 import { type VariantProps } from "class-variance-authority"
 import * as React from "react"
-import { cx } from "src/shared/lib/utils.ts"
-import { buttonVariants } from "./button.style.ts"
+import { cx } from "src/shared/lib"
+import { buttonVariants } from "./button.variants.ts"
 
 export interface ButtonProps
 	extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "type">,

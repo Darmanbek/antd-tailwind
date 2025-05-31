@@ -1,18 +1,18 @@
 import { type DetailedHTMLProps, forwardRef, type HTMLAttributes } from "react"
 
-export interface MenuProps
+export interface TypographyProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	className?: string
 }
 
-const Menu = forwardRef<HTMLDivElement, MenuProps>((props, ref) => {
+const Typography = forwardRef<HTMLDivElement, TypographyProps>((props, ref) => {
 	return (
-		<div
+		<article
 			ref={ref}
 			{...props}
 		/>
 	)
 })
-Menu.displayName = "Menu"
+Typography.displayName = "Typography"
 
-export { Menu }
+export { Typography }

@@ -1,6 +1,5 @@
 import { type FC } from "react"
-import { Image } from "src/shared/ui/data-display"
-import { Title } from "src/shared/ui/general/typography"
+import { Image, Title } from "src/shared/ui"
 
 const Logo: FC = () => {
 	return (

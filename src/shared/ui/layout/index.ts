@@ -1,1 +1,5 @@
-export * from "./layout"
+export * from "./layout.tsx"
+export * from "./sider.tsx"
+export * from "./content.tsx"
+export * from "./header.tsx"
+export * from "./footer.tsx"

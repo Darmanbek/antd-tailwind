@@ -28,10 +28,10 @@ export interface TitleProps
 
 const Title = forwardRef<HTMLHeadingElement, TitleProps>(
 	({ className, level, ...props }, ref) => {
-		const Comp = level || "h1"
+		const Element = level || "h1"
 
 		return (
-			<Comp
+			<Element
 				ref={ref}
 				className={cx(
 					titleVariants({

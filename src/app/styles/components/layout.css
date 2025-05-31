@@ -25,7 +25,8 @@
 		--ant-layout-zero-trigger-height: 2.5rem;
 	}
 
-	.light {
+	.light,
+	.dark {
 		--ant-layout-header-bg: var(--ant-color-bg-container);
 		--ant-layout-header-color: var(--ant-color-text);
 

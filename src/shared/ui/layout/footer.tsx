@@ -9,7 +9,7 @@ export interface FooterProps
 const Footer = forwardRef<HTMLDivElement, FooterProps>(
 	({ className, ...props }, ref) => {
 		return (
-			<div
+			<footer
 				ref={ref}
 				className={cx(
 					"p-layout-footer text-layout-footer-foreground bg-layout-footer text-base",

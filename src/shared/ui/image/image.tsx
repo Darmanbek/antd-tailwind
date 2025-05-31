@@ -45,7 +45,8 @@ const Image = forwardRef<HTMLDivElement, ImageProps>(
 		return (
 			<RcImage
 				alt={""}
-				className={"group w-full h-auto align-middle object-cover"}
+				prefixCls={"group"}
+				className={"w-full h-auto align-middle object-cover"}
 				rootClassName={"group relative inline-block"}
 				preview={mergedPreview}
 				{...props}

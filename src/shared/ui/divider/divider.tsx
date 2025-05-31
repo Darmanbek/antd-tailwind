@@ -1,19 +1,19 @@
 import { type DetailedHTMLProps, forwardRef, type HTMLAttributes } from "react"
 
-export interface TextProps
+export interface DividerProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	className?: string
-	strong?: boolean
 }
 
-const Text = forwardRef<HTMLDivElement, TextProps>((props, ref) => {
+const Divider = forwardRef<HTMLDivElement, DividerProps>((props, ref) => {
 	return (
 		<div
 			ref={ref}
+			className={"border-b"}
 			{...props}
 		/>
 	)
 })
-Text.displayName = "Text"
+Divider.displayName = "Divider"
 
-export { Text }
+export { Divider }
