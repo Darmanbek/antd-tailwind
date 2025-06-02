@@ -98,6 +98,7 @@ export default {
 				border: {
 					DEFAULT: "var(--ant-color-border)",
 					hover: "var(--ant-color-border-hover)",
+					secondary: "var(--ant-color-border-secondary)",
 				},
 			},
 			margin: {
@@ -131,6 +132,12 @@ export default {
 			borderStyle: {
 				antd: "var(--ant-line-type)",
 			},
+			borderRadius: {
+				xs: "var(--ant-border-radius-xs)",
+				sm: "var(--ant-border-radius-sm)",
+				DEFAULT: "var(--ant-border-radius)",
+				lg: "var(--ant-border-radius-lg)",
+			},
 			height: {
 				xs: "var(--ant-control-height-xs)",
 				sm: "var(--ant-control-height-sm)",
@@ -146,6 +153,9 @@ export default {
 			},
 			lineHeight: {
 				header: "var(--ant-layout-header-height)",
+				sm: "var(--ant-line-height-sm)",
+				base: "var(--ant-line-height)",
+				lg: "var(--ant-line-height-lg)",
 			},
 			boxShadow: {
 				DEFAULT: "var(--ant-box-shadow)",

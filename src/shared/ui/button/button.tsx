@@ -1,20 +1,17 @@
 import { type VariantProps } from "class-variance-authority"
-import * as React from "react"
+import { type ButtonHTMLAttributes, forwardRef } from "react"
 import { cx } from "src/shared/lib"
 import { buttonVariants } from "./button.variants.ts"
 
 export interface ButtonProps
-	extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "type">,
+	extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "type">,
 		VariantProps<typeof buttonVariants> {
 	block?: boolean
-	htmlType?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"]
+	htmlType?: ButtonHTMLAttributes<HTMLButtonElement>["type"]
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-	(
-		{ block, className, type = "default", htmlType, size = "middle", ...props },
-		ref
-	) => {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+	({ block, className, type, htmlType, size = "middle", ...props }, ref) => {
 		return (
 			<button
 				ref={ref}
