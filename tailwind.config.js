@@ -69,7 +69,21 @@ export default {
 
 				primary: {
 					DEFAULT: "var(--ant-color-primary)",
-					bg: "var(--ant-color-primary-bg)",
+					hover: "var(--ant-color-primary-hover)",
+					active: "var(--ant-color-primary-active)",
+					foreground: {
+						DEFAULT: "var(--ant-color-primary-text)",
+						hover: "var(--ant-color-primary-text-hover)",
+						active: "var(--ant-color-primary-text-active)",
+					},
+					bg: {
+						DEFAULT: "var(--ant-color-primary-bg)",
+						hover: "var(--ant-color-primary-bg-hover)",
+					},
+					border: {
+						DEFAULT: "var(--ant-color-primary-border)",
+						hover: "var(--ant-color-primary-border-hover)",
+					},
 				},
 
 				layout: {
@@ -113,6 +127,7 @@ export default {
 					active: "var(--ant-color-link-active)",
 				},
 				split: "var(--ant-color-split)",
+				placeholder: "var(--ant-color-text-placeholder)",
 			},
 			margin: {
 				xxs: "var(--ant-margin-xxs)",

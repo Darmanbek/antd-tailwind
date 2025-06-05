@@ -27,7 +27,12 @@ function RouteComponent() {
 				additionally.
 			</Paragraph>
 			<Divider />
-			<Input placeholder={"Search in components"} />
+			<Input
+				size={"large"}
+				variant={"borderless"}
+				className={"text-xl p-0"}
+				placeholder={"Search in components"}
+			/>
 			<Divider />
 		</>
 	)
