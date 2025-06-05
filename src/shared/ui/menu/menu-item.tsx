@@ -21,7 +21,12 @@ const MenuItem = forwardRef<HTMLLIElement, MenuItemProps>(
 				)}
 				{...props}
 			>
-				<span className={"flex-auto min-w-0 overflow-hidden text-ellipsis"}>
+				<span
+					className={cx(
+						"flex-auto flex min-w-0 overflow-hidden text-ellipsis",
+						"[&_a]:flex-auto [&_a]:before:absolute [&_a]:before:inset-0"
+					)}
+				>
 					{children}
 				</span>
 			</RcMenuItem>

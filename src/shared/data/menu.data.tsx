@@ -1,9 +1,10 @@
+import { Link } from "@tanstack/react-router"
 import type { MenuItemType } from "src/shared/ui/menu"
 
 export const menuData: MenuItemType[] = [
 	{
 		key: "/",
-		label: "Components Overview",
+		label: <Link to={"/"}>Components Overview</Link>,
 	},
 	{
 		key: "/general",
@@ -12,12 +13,7 @@ export const menuData: MenuItemType[] = [
 	},
 	{
 		key: "/general/button",
-		label: "Button",
-	},
-	{
-		key: "divider",
-		type: "divider",
-		label: "Button",
+		label: <Link to={"/general/button"}>Button</Link>,
 	},
 	{
 		key: "/general/float-button",

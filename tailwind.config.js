@@ -100,6 +100,19 @@ export default {
 					hover: "var(--ant-color-border-hover)",
 					secondary: "var(--ant-color-border-secondary)",
 				},
+				fill: {
+					content: {
+						DEFAULT: "var(--ant-color-fill-content)", // 	--ant-color-fill-content: rgba(0, 0, 0, 0.06);
+						hover: "var(--ant-color-fill-content-hover)", // 		--ant-color-fill-content-hover: rgba(0, 0, 0, 0.15);
+					},
+					after: "var(--ant-color-fill-alter)",
+				},
+				link: {
+					DEFAULT: "var(--ant-color-link)",
+					hover: "var(--ant-color-link-hover)",
+					active: "var(--ant-color-link-active)",
+				},
+				split: "var(--ant-color-split)",
 			},
 			margin: {
 				xxs: "var(--ant-margin-xxs)",

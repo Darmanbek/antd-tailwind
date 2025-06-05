@@ -5,7 +5,8 @@ export const buttonVariants = cva(
 	{
 		variants: {
 			type: {
-				default: "",
+				default:
+					"text-foreground shadow-xs border-border bg-background hover:border-primary hover:text-primary",
 				primary: "",
 				outlined: "",
 				text: "",
@@ -14,7 +15,7 @@ export const buttonVariants = cva(
 			},
 			size: {
 				small: "",
-				middle: "",
+				middle: "h-base rounded px-base",
 				large: "",
 			},
 		},

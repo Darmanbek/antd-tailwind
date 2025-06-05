@@ -13,6 +13,7 @@
 import { Route as rootRoute } from "./routes/__root"
 import { Route as LayoutImport } from "./routes/_layout"
 import { Route as LayoutIndexImport } from "./routes/_layout/index"
+import { Route as LayoutGeneralButtonImport } from "./routes/_layout/general/button"
 
 // Create/Update Routes
 
@@ -24,6 +25,12 @@ const LayoutRoute = LayoutImport.update({
 const LayoutIndexRoute = LayoutIndexImport.update({
   id: "/",
   path: "/",
+  getParentRoute: () => LayoutRoute,
+} as any)
+
+const LayoutGeneralButtonRoute = LayoutGeneralButtonImport.update({
+  id: "/general/button",
+  path: "/general/button",
   getParentRoute: () => LayoutRoute,
 } as any)
 
@@ -45,6 +52,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof LayoutIndexImport
       parentRoute: typeof LayoutImport
     }
+    "/_layout/general/button": {
+      id: "/_layout/general/button"
+      path: "/general/button"
+      fullPath: "/general/button"
+      preLoaderRoute: typeof LayoutGeneralButtonImport
+      parentRoute: typeof LayoutImport
+    }
   }
 }
 
@@ -52,10 +66,12 @@ declare module "@tanstack/react-router" {
 
 interface LayoutRouteChildren {
   LayoutIndexRoute: typeof LayoutIndexRoute
+  LayoutGeneralButtonRoute: typeof LayoutGeneralButtonRoute
 }
 
 const LayoutRouteChildren: LayoutRouteChildren = {
   LayoutIndexRoute: LayoutIndexRoute,
+  LayoutGeneralButtonRoute: LayoutGeneralButtonRoute,
 }
 
 const LayoutRouteWithChildren =
@@ -64,24 +80,27 @@ const LayoutRouteWithChildren =
 export interface FileRoutesByFullPath {
   "": typeof LayoutRouteWithChildren
   "/": typeof LayoutIndexRoute
+  "/general/button": typeof LayoutGeneralButtonRoute
 }
 
 export interface FileRoutesByTo {
   "/": typeof LayoutIndexRoute
+  "/general/button": typeof LayoutGeneralButtonRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   "/_layout": typeof LayoutRouteWithChildren
   "/_layout/": typeof LayoutIndexRoute
+  "/_layout/general/button": typeof LayoutGeneralButtonRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: "" | "/"
+  fullPaths: "" | "/" | "/general/button"
   fileRoutesByTo: FileRoutesByTo
-  to: "/"
-  id: "__root__" | "/_layout" | "/_layout/"
+  to: "/" | "/general/button"
+  id: "__root__" | "/_layout" | "/_layout/" | "/_layout/general/button"
   fileRoutesById: FileRoutesById
 }
 
@@ -109,11 +128,16 @@ export const routeTree = rootRoute
     "/_layout": {
       "filePath": "_layout.tsx",
       "children": [
-        "/_layout/"
+        "/_layout/",
+        "/_layout/general/button"
       ]
     },
     "/_layout/": {
       "filePath": "_layout/index.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/general/button": {
+      "filePath": "_layout/general/button.tsx",
       "parent": "/_layout"
     }
   }

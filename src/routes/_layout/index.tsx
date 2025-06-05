@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router"
-import { UserOutlined } from "src/shared/ui/icon"
+import { Divider, Input, Link, Paragraph, Text, Title } from "src/shared/ui"
 
 export const Route = createFileRoute("/_layout/")({
 	component: RouteComponent,
@@ -8,8 +8,27 @@ export const Route = createFileRoute("/_layout/")({
 function RouteComponent() {
 	return (
 		<>
-			<h1 className={"font-semibold text-3xl"}>Components Overview</h1>
-			<UserOutlined className={"size-10"} />
+			<Title
+				level={"h2"}
+				className={"mb-4"}
+			>
+				Components Overview
+			</Title>
+			<Paragraph className={"my-4 leading-[2]"}>
+				<Text code={true}>antd</Text> provides plenty of UI components to enrich
+				your web applications, and we will improve components experience
+				consistently. We also recommend some great{" "}
+				<Link
+					href={"https://ant.design"}
+					target={"_blank"}
+				>
+					Third-Party Libraries
+				</Link>{" "}
+				additionally.
+			</Paragraph>
+			<Divider />
+			<Input placeholder={"Search in components"} />
+			<Divider />
 		</>
 	)
 }

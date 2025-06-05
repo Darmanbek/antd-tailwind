@@ -1,4 +1,4 @@
-import { cva, VariantProps } from "class-variance-authority"
+import { cva, type VariantProps } from "class-variance-authority"
 import {
 	type DetailedHTMLProps,
 	forwardRef,
@@ -13,7 +13,7 @@ const cardVariants = cva(
 		variants: {
 			variants: {
 				borderless: "",
-				bordered: "",
+				bordered: "border border-border-secondary border-solid",
 			},
 		},
 		defaultVariants: {
