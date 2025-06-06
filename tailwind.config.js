@@ -59,7 +59,10 @@ export default {
 				],
 			},
 			colors: {
-				background: "var(--ant-color-bg-base)",
+				background: {
+					DEFAULT: "var(--ant-color-bg-base)",
+				},
+
 				foreground: {
 					DEFAULT: "var(--ant-color-text)",
 					secondary: "var(--ant-color-text-secondary)",
@@ -88,23 +91,6 @@ export default {
 
 				layout: {
 					DEFAULT: "var(--ant-color-bg-layout)",
-					background: "var(--ant-layout-body-bg)",
-					header: {
-						DEFAULT: "var(--ant-layout-header-bg)",
-						foreground: "var(--ant-layout-header-color)",
-					},
-					sider: {
-						DEFAULT: "var(--ant-layout-sider-bg)",
-						foreground: "var(--ant-layout-sider-color)",
-					},
-					trigger: {
-						DEFAULT: "var(--ant-layout-trigger-bg)",
-						foreground: "var(--ant-layout-trigger-color)",
-					},
-					footer: {
-						DEFAULT: "var(--ant-layout-footer-bg)",
-						foreground: "var(--ant-layout-footer-color)",
-					},
 				},
 				container: {
 					DEFAULT: "var(--ant-color-bg-container)",
@@ -116,8 +102,8 @@ export default {
 				},
 				fill: {
 					content: {
-						DEFAULT: "var(--ant-color-fill-content)", // 	--ant-color-fill-content: rgba(0, 0, 0, 0.06);
-						hover: "var(--ant-color-fill-content-hover)", // 		--ant-color-fill-content-hover: rgba(0, 0, 0, 0.15);
+						DEFAULT: "var(--ant-color-fill-content)",
+						hover: "var(--ant-color-fill-content-hover)",
 					},
 					after: "var(--ant-color-fill-alter)",
 				},
@@ -147,9 +133,6 @@ export default {
 				md: "var(--ant-padding-md)",
 				lg: "var(--ant-padding-lg)",
 				xl: "var(--ant-padding-xl)",
-
-				"layout-header": "var(--ant-layout-header-padding)",
-				"layout-footer": "var(--ant-layout-footer-padding)",
 			},
 			gap: {
 				xs: "var(--ant-margin-xs)",
@@ -171,16 +154,8 @@ export default {
 				sm: "var(--ant-control-height-sm)",
 				base: "var(--ant-control-height)",
 				lg: "var(--ant-control-height-lg)",
-
-				"layout-header": "var(--ant-layout-header-height)",
-				"layout-trigger": "var(--ant-layout-trigger-height)",
-				"layout-zero-trigger": "var(--ant-layout-zero-trigger-height)",
-			},
-			width: {
-				"layout-zero-trigger": "var(--ant-layout-zero-trigger-width)",
 			},
 			lineHeight: {
-				header: "var(--ant-layout-header-height)",
 				sm: "var(--ant-line-height-sm)",
 				base: "var(--ant-line-height)",
 				lg: "var(--ant-line-height-lg)",
@@ -189,6 +164,7 @@ export default {
 				DEFAULT: "var(--ant-box-shadow)",
 				secondary: "var(--ant-box-shadow-secondary)",
 				tertiary: "var(--ant-box-shadow-tertiary)",
+				card: "var(--ant-box-shadow-card)",
 			},
 			transitionDuration: {
 				fast: "var(--ant-motion-duration-fast)",

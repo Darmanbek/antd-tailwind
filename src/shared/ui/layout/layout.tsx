@@ -13,7 +13,7 @@ const Layout = forwardRef<HTMLDivElement, LayoutProps>(
 			<div
 				ref={ref}
 				className={cx(
-					"bg-layout-background text-foreground flex flex-col w-full",
+					"bg-layout text-foreground flex flex-col w-full",
 					{
 						"flex-row": hasSider,
 					},

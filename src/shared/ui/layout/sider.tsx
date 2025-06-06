@@ -7,16 +7,15 @@ export interface SiderProps
 }
 
 const Sider = forwardRef<HTMLElement, SiderProps>(
-	({ className, ...props }, ref) => {
+	({ className, children, ...props }, ref) => {
 		return (
 			<aside
 				ref={ref}
-				className={cx(
-					"relative bg-layout-sider text-layout-sider-foreground min-w-0 w-64 h-full",
-					className
-				)}
+				className={cx("layout-sider relative min-w-0 w-64 h-full", className)}
 				{...props}
-			/>
+			>
+				{children}
+			</aside>
 		)
 	}
 )

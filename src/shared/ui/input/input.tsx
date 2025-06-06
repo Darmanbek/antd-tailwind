@@ -14,13 +14,13 @@ const inputVariants = cva(
 				outlined:
 					"bg-container border border-solid border-border hover:border-primary focus:border-primary focus:ring-1 focus:shadow-primary",
 				filled: "",
-				borderless: "bg-transparent",
+				borderless: "bg-transparent border-none",
 				underlined: "",
 			},
 			size: {
-				large: "py-2 px-3 text-lg leading-lg rounded-lg",
-				middle: "py-1 px-3 text-base leading-base rounded",
-				small: "py-0 px-1 text-sm leading-base rounded-sm",
+				large: "py-xs px-sm text-lg leading-lg rounded-lg",
+				middle: "py-xxs px-sm text-base leading-base rounded",
+				small: "py-0 px-xxs text-sm leading-base rounded-sm",
 			},
 		},
 		defaultVariants: {

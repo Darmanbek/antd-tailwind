@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+
+@layer base {
+	:root {
+		--ant-layout-body-bg: var(--ant-color-bg-layout);
+
+		--ant-layout-header-bg: #001529;
+		--ant-layout-header-height: calc(var(--ant-control-height) * 2);
+		--ant-layout-header-padding: 0 calc(var(--ant-control-height-lg) * 1.25);
+		--ant-layout-header-color: #fff;
+
+		--ant-layout-footer-padding: var(--ant-control-height-sm) calc(var(--ant-control-height-lg) * 1.25);
+		--ant-layout-footer-bg: var(--ant-color-bg-layout);
+		--ant-layout-footer-color: var(--ant-color-text);
+
+		--ant-layout-sider-bg: #001529;
+		--ant-layout-sider-color: #fff;
+
+		--ant-layout-trigger-height: calc(var(--ant-control-height-lg) * var(--ant-margin-xxs) * 2);
+		--ant-layout-trigger-bg: #002140;
+		--ant-layout-trigger-color: #fff;
+
+		--ant-layout-zero-trigger-width: var(--ant-control-height-lg);
+		--ant-layout-zero-trigger-height: var(--ant-control-height-lg);
+	}
+
+	.light,
+	.dark {
+		--ant-layout-header-bg: var(--ant-color-bg-container);
+		--ant-layout-header-color: var(--ant-color-text);
+
+		--ant-layout-sider-bg: var(--ant-color-bg-container);
+		--ant-layout-sider-color: var(--ant-color-text);
+
+		--ant-layout-trigger-bg: var(--ant-color-bg-container);
+		--ant-layout-trigger-color: var(--ant-color-text);
+	}
+}
+
+@layer components {
+	.layout-header {
+		height: var(--ant-layout-header-height);
+		padding: var(--ant-layout-header-padding);
+		background-color: var(--ant-layout-header-bg);
+		color: var(--ant-layout-header-color);
+		line-height: var(--ant-layout-header-height);
+	}
+
+	.layout-sider {
+		background-color: var(--ant-layout-sider-bg);
+		color: var(--ant-layout-sider-color);
+	}
+
+	.layout-footer {
+		padding: var(--ant-layout-footer-padding);
+		color: var(--ant-layout-footer-color);
+		background-color: var(--ant-layout-footer-bg);
+	}
+
+	.layout-trigger {
+		position: fixed;
+		bottom: 0;
+		z-index: 1;
+		height: var(--ant-layout-trigger-height);
+		color: var(--ant-layout-trigger-color);
+		line-height: var(--ant-layout-trigger-height);
+		text-align: center;
+		background-color: var(--ant-layout-trigger-bg);
+		cursor: pointer;
+		transition: all var(--ant-motion-duration-mid);
+	}
+
+	.layout-trigger-zero {
+		position: absolute;
+		top: var(--ant-layout-header-height);
+		inset-inline-end: calc(var(--ant-layout-zero-trigger-width) * -1);
+		z-index: 1;
+		width: var(--ant-layout-zero-trigger-width);
+		height: var(--ant-layout-zero-trigger-height);
+		color: var(--ant-layout-trigger-color);
+		font-size: var(--ant-font-size-lg);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--ant-layout-sider-bg);
+		border-radius: 0 var(--ant-border-radius-lg) var(--ant-border-radius-lg) 0;
+		cursor: pointer;
+		transition: background-color var(--ant-motion-duration-slow) ease;
+	}
+}

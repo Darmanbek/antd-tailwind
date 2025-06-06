@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+
+@layer base {
+	:root {
+		--ant-card-header-bg: transparent;
+		--ant-card-header-font-size: var(--ant-font-size-lg);
+		--ant-card-header-font-size-sm: var(--ant-font-size);
+		--ant-card-header-height: calc(var(--ant-font-size-lg) * var(--ant-line-height-lg) + var(--ant-padding) * 2);
+		--ant-card-header-height-sm: calc(var(--ant-font-size-lg) * var(--ant-line-height) + var(--ant-padding-xs) * 2);
+		--ant-card-actions-bg: var(--ant-color-bg-container);
+		--ant-card-actions-li-margin: var(--ant-padding-sm) 0;
+		--ant-card-tabs-margin-bottom: calc(-1 * (var(--ant-padding) + var(--ant-line-width)));
+		--ant-card-extra-color: var(--ant-color-text);
+		--ant-card-body-padding-sm: 12px; // Fixed padding
+		--ant-card-header-padding-sm: 12px; // Fixed padding
+		--ant-card-body-padding: var(--ant-padding-lg);
+		--ant-card-header-padding: var(--ant-padding-lg);
+	}
+
+}
+
+@layer components {
+	.card {
+		position: relative;
+		background-color: var(--ant-color-bg-container);
+	}
+
+	.card-head {
+
+	}
+
+	.card-cover {
+
+	}
+
+	.card-body {
+
+	}
+
+
+}

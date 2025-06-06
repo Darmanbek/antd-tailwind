@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+
+@layer base {
+	:root {
+		--ant-menu-dropdown-width: 160px;
+		--ant-menu-z-index-popup: calc(var(--ant-z-index-popup-base) + 50);
+		--ant-menu-radius-item: var(--ant-border-radius-lg);
+		--ant-menu-item-border-radius: var(--ant-border-radius-lg);
+		--ant-menu-radius-sub-menu-item: var(--ant-border-radius-sm);
+		--ant-menu-sub-menu-item-border-radius: var(--ant-border-radius-sm);
+		--ant-menu-color-item-text: var(--ant-color-text);
+		--ant-menu-item-color: var(--ant-color-text);
+		--ant-menu-color-item-text-hover: var(--ant-color-text);
+		--ant-menu-item-hover-color: var(--ant-color-text);
+		--ant-menu-color-item-text-hover-horizontal: var(--ant-color-primary);
+		--ant-menu-horizontal-item-hover-color: var(--ant-color-primary);
+		--ant-menu-color-group-title: var(--ant-color-text-description);
+		--ant-menu-group-title-color: var(--ant-color-text-description);
+		--ant-menu-color-item-text-selected: var(--ant-color-primary);
+		--ant-menu-item-selected-color: var(--ant-color-primary);
+		--ant-menu-sub-menu-item-selected-color: var(--ant-color-primary);
+		--ant-menu-color-item-text-selected-horizontal: var(--ant-color-primary);
+		--ant-menu-horizontal-item-selected-color: var(--ant-color-primary);
+		--ant-menu-color-item-bg: var(--ant-color-bg-container);
+		--ant-menu-item-bg: var(--ant-color-bg-container);
+		--ant-menu-color-item-bg-hover: var(--ant-color-bg-text-hover);
+		--ant-menu-item-hover-bg: var(--ant-color-bg-text-hover);
+		--ant-menu-color-item-bg-active: var(--ant-color-fill-content);
+		--ant-menu-item-active-bg: var(--ant-control-item-bg-active);
+		--ant-menu-color-sub-item-bg: var(--ant-color-fill-alter);
+		--ant-menu-sub-menu-item-bg: var(--ant-color-fill-alter);
+		--ant-menu-color-item-bg-selected: var(--ant-control-item-bg-active);
+		--ant-menu-item-selected-bg: var(--ant-control-item-bg-active);
+		--ant-menu-color-item-bg-selected-horizontal: transparent;
+		--ant-menu-horizontal-item-selected-bg: transparent;
+		--ant-menu-color-active-bar-width: 0;
+		--ant-menu-active-bar-width: 0;
+		--ant-menu-color-active-bar-height: var(--ant-line-width-bold);
+		--ant-menu-active-bar-height: var(--ant-line-width-bold);
+		--ant-menu-color-active-bar-border-size: var(--ant-line-width);
+		--ant-menu-active-bar-border-width: var(--ant-line-width);
+
+		// Disabled
+		--ant-menu-color-item-text-disabled: var(--ant-color-text-disabled);
+		--ant-menu-item-disabled-color: var(--ant-color-text-disabled);
+
+		// Dander
+		--ant-menu-color-danger-item-text: var(--ant-color-error);
+		--ant-menu-danger-item-color: var(--ant-color-error);
+		--ant-menu-color-danger-item-text-hover: var(--ant-color-error);
+		--ant-menu-danger-item-hover-color: var(--ant-color-error);
+		--ant-menu-color-danger-item-text-selected: var(--ant-color-error);
+		--ant-menu-danger-item-selected-color: var(--ant-color-error);
+		--ant-menu-color-danger-item-bg-active: var(--ant-color-error-bg);
+		--ant-menu-danger-item-active-bg: var(--ant-color-error-bg);
+		--ant-menu-color-danger-item-bg-selected: var(--ant-color-error-bg);
+		--ant-menu-danger-item-selected-bg: var(--ant-color-error-bg);
+
+		--ant-menu-item-margin-inline: var(--ant-margin-xxs);
+
+		--ant-menu-horizontal-item-border-radius: 0;
+		--ant-menu-horizontal-item-hover-bg: transparent;
+		--ant-menu-item-height: var(--ant-control-height-lg);
+		--ant-menu-group-title-line-height: var(--ant-line-height);
+		--ant-menu-collapsed-width: calc(var(--ant-control-height) * 2);
+		--ant-menu-popup-bg: var(--ant-color-bg-elevated);
+		--ant-menu-item-margin-block: var(--ant-margin-xxs);
+		--ant-menu-item-padding-inline: var(--ant-padding);
+		--ant-menu-horizontal-line-height: calc(var(--ant-control-height-lg) * 1.15);
+		--ant-menu-icon-size: var(--ant-font-size);
+		--ant-menu-icon-margin-inline-end: calc(var(--ant-control-height-lg) - var(--ant-font-size));
+		--ant-menu-collapsed-icon-size: var(--ant-font-size-lg);
+		--ant-menu-group-title-font-size: var(--ant-font-size);
+
+		// Disabled
+		--ant-menu-dark-item-disabled-color: rgba(255, 255, 255, 0.25);
+
+		// Dark
+		--ant-menu-dark-item-color: rgba(255, 255, 255, 0.65);
+		--ant-menu-dark-danger-item-color: var(--ant-color-error);
+		--ant-menu-dark-item-bg: #001529;
+		--ant-menu-dark-popup-bg: #001529;
+		--ant-menu-dark-sub-menu-item-bg: #000c17;
+		--ant-menu-dark-item-selected-color: var(--ant-color-text-light-solid);
+		--ant-menu-dark-item-selected-bg: var(--ant-color-primary);
+		--ant-menu-dark-danger-item-selected-bg: var(--ant-color-error);
+		--ant-menu-dark-item-hover-bg: transparent;
+		--ant-menu-dark-group-title-color: rgba(255, 255, 255, 0.65);
+		--ant-menu-dark-item-hover-color: var(--ant-color-text-light-solid);
+		--ant-menu-dark-danger-item-hover-color: var(--ant-color-error-hover);
+		--ant-menu-dark-danger-item-selected-color: var(--ant-color-text-light-solid);
+		--ant-menu-dark-danger-item-active-bg: var(--ant-color-error);
+		--ant-menu-item-width: calc(100% - calc(var(--ant-margin-xxs) * 2));
+	}
+}
+
+@layer components {
+	
+}

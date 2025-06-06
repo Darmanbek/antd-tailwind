@@ -1,6 +1,7 @@
 import type { ImagePreviewType, ImageProps as RcImageProps } from "rc-image"
 import RcImage from "rc-image"
 import { forwardRef, useMemo } from "react"
+import { cx } from "src/shared/lib"
 
 interface PreviewType extends Omit<ImagePreviewType, "destroyOnClose"> {
 	destroyOnHidden?: boolean
@@ -17,7 +18,7 @@ export interface ImageProps extends CustomRcImageProps {
 }
 
 const Image = forwardRef<HTMLDivElement, ImageProps>(
-	({ preview, ...props }) => {
+	({ preview, className, wrapperClassName, ...props }) => {
 		const mergedPreview = useMemo(() => {
 			if (preview === false) return preview
 			const _preview = typeof preview === "object" ? preview : {}
@@ -46,8 +47,8 @@ const Image = forwardRef<HTMLDivElement, ImageProps>(
 			<RcImage
 				alt={""}
 				prefixCls={"group"}
-				className={"w-full h-auto align-middle object-cover"}
-				rootClassName={"group relative inline-block"}
+				className={cx("w-full h-auto align-middle object-cover", className)}
+				rootClassName={cx("group relative inline-block", wrapperClassName)}
 				preview={mergedPreview}
 				{...props}
 			/>

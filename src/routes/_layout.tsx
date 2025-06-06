@@ -21,7 +21,9 @@ function RouteComponent() {
 	return (
 		<>
 			<Layout className={"min-h-screen bg-container"}>
-				<Header className={"light shadow-tertiary sticky inset-x-0 top-0 z-10"}>
+				<Header
+					className={"light pl-10 shadow-tertiary sticky inset-x-0 top-0 z-10"}
+				>
 					<Logo />
 				</Header>
 				<Layout

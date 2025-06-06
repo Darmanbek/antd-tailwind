@@ -1,22 +1,22 @@
 import { type DetailedHTMLProps, forwardRef, type HTMLAttributes } from "react"
 import { cx } from "src/shared/lib"
 
-export interface FooterProps
+export interface FlexProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	className?: string
 }
 
-const Footer = forwardRef<HTMLDivElement, FooterProps>(
+const Flex = forwardRef<HTMLDivElement, FlexProps>(
 	({ className, ...props }, ref) => {
 		return (
-			<footer
+			<div
 				ref={ref}
-				className={cx("layout-footer text-base", className)}
+				className={cx("flex p-0 m-0 gap-1", className)}
 				{...props}
 			/>
 		)
 	}
 )
-Footer.displayName = "Footer"
+Flex.displayName = "Flex"
 
-export { Footer }
+export { Flex }

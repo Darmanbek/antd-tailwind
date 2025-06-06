@@ -11,10 +11,7 @@ const Header = forwardRef<HTMLElement, HeaderProps>(
 		return (
 			<header
 				ref={ref}
-				className={cx(
-					"h-layout-header p-layout-header text-layout-header-foreground leading-header bg-layout-header flex",
-					className
-				)}
+				className={cx("layout-header flex", className)}
 				{...props}
 			/>
 		)
