@@ -35,6 +35,21 @@ const twMerge = extendTailwindMerge({
 		classGroups: {
 			...padding,
 			...margin,
+			shadow: [
+				{
+					shadow: ["secondary", "tertiary", "card"],
+				},
+			],
+			w: [
+				{
+					w: ["xs", "sm", "base", "lg"],
+				},
+			],
+			h: [
+				{
+					h: ["xs", "sm", "base", "lg"],
+				},
+			],
 		},
 	},
 })

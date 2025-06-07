@@ -9,7 +9,7 @@ export * from "./divider"
 export * from "./flex"
 // export * from "./grid"
 export * from "./layout"
-// export * from "./space"
+export * from "./space"
 
 // Navigation
 // export * from "./anchor"

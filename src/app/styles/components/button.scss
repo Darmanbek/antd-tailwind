@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+
+@layer base {
+	:root {
+		--ant-button-font-weight: 400;
+		--ant-button-default-shadow: 0 var(--ant-control-outline-width) 0 var(--ant-control-tmp-outline);
+		--ant-button-primary-shadow: 0 var(--ant-control-outline-width) 0 var(--ant-control-tmp-outline);
+		--ant-button-danger-shadow: 0 var(--ant-control-outline-width) 0 var(--ant-color-error-outline);
+		--ant-button-primary-color: var(--ant-color-text-light-solid);
+		--ant-button-danger-color: var(--ant-color-text-light-solid);
+		--ant-button-border-color-disabled: var(--ant-color-border);
+		--ant-button-default-ghost-color: var(--ant-color-bg-container);
+		--ant-button-ghost-bg: transparent;
+		--ant-button-default-ghost-border-color: var(--ant-color-bg-container);
+		--ant-button-padding-inline: calc(var(--ant-padding-content-horizontal) - var(--ant-line-width));
+		--ant-button-padding-inline-lg: calc(var(--ant-padding-content-horizontal) - var(--ant-line-width));
+		--ant-button-padding-inline-sm: var(--ant-line-width);
+		--ant-button-only-icon-size: inherit;
+		--ant-button-only-icon-size-sm: inherit;
+		--ant-button-only-icon-size-lg: inherit;
+		--ant-button-group-border-color: var(--ant-color-primary-hover);
+		--ant-button-link-hover-bg: transparent;
+		--ant-button-text-text-color: var(--ant-color-text);
+		--ant-button-text-text-hover-color: var(--ant-color-text);
+		--ant-button-text-text-active-color: var(--ant-color-text);
+		--ant-button-text-hover-bg: var(--ant-color-fill-tertiary);
+		--ant-button-default-color: var(--ant-color-text);
+		--ant-button-default-bg: var(--ant-color-bg-container);
+		--ant-button-default-border-color: var(--ant-color-border);
+		--ant-button-default-border-color-disabled: var(--ant-color-border);
+		--ant-button-default-hover-bg: var(--ant-color-bg-container);
+		--ant-button-default-hover-color: var(--ant-color-primary-hover);
+		--ant-button-default-hover-border-color: var(--ant-color-primary-hover);
+		--ant-button-default-active-bg: var(--ant-color-bg-container);
+		--ant-button-default-active-color: var(--ant-color-primary-active);
+		--ant-button-default-active-border-color: var(--ant-color-primary-active);
+		--ant-button-solid-text-color: #fff;
+		--ant-button-content-font-size: var(--ant-font-size);
+		--ant-button-content-font-size-sm: var(--ant-font-size);
+		--ant-button-content-font-size-lg: var(--ant-font-size-lg);
+		--ant-button-content-line-height: var(--ant-line-height);
+		--ant-button-content-line-height-sm: var(--ant-line-height);
+		--ant-button-content-line-height-lg: var(--ant-line-height-lg);
+		--ant-button-padding-block: max(calc((var(--ant-control-height) - var(--ant-font-size) * var(--ant-line-height)) / 2 - var(--ant-line-width)), 0);
+		--ant-button-padding-block-sm: max(calc((var(--ant-control-height-sm) - var(--ant-font-size) * var(--ant-line-height)) / 2 - var(--ant-line-width)), 0);
+		--ant-button-padding-block-lg: max(calc((var(--ant-control-height-lg) - var(--ant-font-size-lg) * var(--ant-line-height-lg)) / 2 - var(--ant-line-width)), 0);
+	}
+}

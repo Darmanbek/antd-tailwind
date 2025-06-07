@@ -4,7 +4,7 @@ import { cx } from "src/shared/lib"
 import { Title } from "../typography"
 
 const cardVariants = cva(
-	"text-foreground text-base leading-base list-none font-ant relative bg-container rounded",
+	"text-foreground text-base leading-base list-none font-ant relative bg-background-container rounded",
 	{
 		variants: {
 			variants: {

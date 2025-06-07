@@ -7,7 +7,7 @@ import {
 import { cx } from "src/shared/lib"
 
 const inputVariants = cva(
-	"outline-none placeholder:text-placeholder placeholder:select-none placeholder:opacity-100 placeholder-shown:text-ellipsis m-0 text-foreground font-ant relative inline-block w-full min-w-0 transition-all duration-mid list-none",
+	"outline-none placeholder:text-foreground-placeholder placeholder:select-none placeholder:opacity-100 placeholder-shown:text-ellipsis m-0 text-foreground font-ant relative inline-block w-full min-w-0 transition-all duration-mid list-none",
 	{
 		variants: {
 			variant: {

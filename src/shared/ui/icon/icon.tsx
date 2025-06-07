@@ -47,7 +47,7 @@ const Icon = forwardRef<HTMLSpanElement, IconProps>(
 				tabIndex={iconTabIndex}
 				aria-label={`${target.name}-${target.theme}`}
 				className={cx(
-					"inline-flex items-center text-inherit text-center size-4",
+					"inline-flex items-center text-inherit text-center",
 					{
 						"animate-spin": spin,
 					},

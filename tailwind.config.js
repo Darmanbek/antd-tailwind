@@ -1,4 +1,5 @@
 /** @type {import("tailwindcss").Config} */
+
 export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	darkMode: "class",
@@ -11,65 +12,51 @@ export default {
 			fontSize: {
 				base: [
 					"var(--ant-font-size)",
-					{
-						lineHeight: "var(--ant-line-height)",
-					},
+					{ lineHeight: "var(--ant-line-height)" },
 				],
 				sm: [
 					"var(--ant-font-size-sm)",
-					{
-						lineHeight: "var(--ant-line-height-sm)",
-					},
+					{ lineHeight: "var(--ant-line-height-sm)" },
 				],
 				lg: [
 					"var(--ant-font-size-lg)",
-					{
-						lineHeight: "var(--ant-line-height-lg)",
-					},
+					{ lineHeight: "var(--ant-line-height-lg)" },
 				],
-				// lg: [
-				// 	"var(--ant-font-size-heading-5)",
-				// 	{
-				// 		lineHeight: "var(--ant-line-height-heading-5)",
-				// 	},
-				// ],
+				// lg: [ "var(--ant-font-size-heading-5)", { lineHeight: "var(--ant-line-height-heading-5)" } ],
 				xl: [
 					"var(--ant-font-size-heading-4)",
-					{
-						lineHeight: "var(--ant-line-height-heading-4)",
-					},
+					{ lineHeight: "var(--ant-line-height-heading-4)" },
 				],
 				"2xl": [
 					"var(--ant-font-size-heading-3)",
-					{
-						lineHeight: "var(--ant-line-height-heading-3)",
-					},
+					{ lineHeight: "var(--ant-line-height-heading-3)" },
 				],
 				"3xl": [
 					"var(--ant-font-size-heading-2)",
-					{
-						lineHeight: "var(--ant-line-height-heading-2)",
-					},
+					{ lineHeight: "var(--ant-line-height-heading-2)" },
 				],
 				"4xl": [
 					"var(--ant-font-size-heading-1)",
-					{
-						lineHeight: "var(--ant-line-height-heading-1)",
-					},
+					{ lineHeight: "var(--ant-line-height-heading-1)" },
 				],
 			},
 			colors: {
 				background: {
 					DEFAULT: "var(--ant-color-bg-base)",
+					layout: "var(--ant-color-bg-layout)",
+					container: "var(--ant-color-bg-container)",
+					"container-disabled": "var(--ant-color-bg-container-disabled)",
+					"foreground-hover": "var(--ant-color-bg-text-hover)",
+					"foreground-active": "var(--ant-color-bg-text-active)",
 				},
-
 				foreground: {
 					DEFAULT: "var(--ant-color-text)",
 					secondary: "var(--ant-color-text-secondary)",
 					tertiary: "var(--ant-color-text-tertiary)",
 					quaternary: "var(--ant-color-text-quaternary)",
+					placeholder: "var(--ant-color-text-placeholder)",
+					disabled: "var(--ant-color-text-disabled)",
 				},
-
 				primary: {
 					DEFAULT: "var(--ant-color-primary)",
 					hover: "var(--ant-color-primary-hover)",
@@ -88,12 +75,15 @@ export default {
 						hover: "var(--ant-color-primary-border-hover)",
 					},
 				},
-
-				layout: {
-					DEFAULT: "var(--ant-color-bg-layout)",
-				},
-				container: {
-					DEFAULT: "var(--ant-color-bg-container)",
+				error: {
+					DEFAULT: "var(--ant-color-error)",
+					hover: "var(--ant-color-error-hover)",
+					active: "var(--ant-color-error-active)",
+					bg: {
+						DEFAULT: "var(--ant-color-error-bg)",
+						hover: "var(--ant-color-error-bg-filled-hover)",
+						active: "var(--ant-color-error-bg-active)",
+					},
 				},
 				border: {
 					DEFAULT: "var(--ant-color-border)",
@@ -105,6 +95,7 @@ export default {
 						DEFAULT: "var(--ant-color-fill-content)",
 						hover: "var(--ant-color-fill-content-hover)",
 					},
+					tertiary: "var(--ant-color-fill-tertiary)",
 					after: "var(--ant-color-fill-alter)",
 				},
 				link: {
@@ -113,7 +104,6 @@ export default {
 					active: "var(--ant-color-link-active)",
 				},
 				split: "var(--ant-color-split)",
-				placeholder: "var(--ant-color-text-placeholder)",
 			},
 			margin: {
 				xxs: "var(--ant-margin-xxs)",
@@ -150,6 +140,12 @@ export default {
 				lg: "var(--ant-border-radius-lg)",
 			},
 			height: {
+				xs: "var(--ant-control-height-xs)",
+				sm: "var(--ant-control-height-sm)",
+				base: "var(--ant-control-height)",
+				lg: "var(--ant-control-height-lg)",
+			},
+			width: {
 				xs: "var(--ant-control-height-xs)",
 				sm: "var(--ant-control-height-sm)",
 				base: "var(--ant-control-height)",
