@@ -1,27 +1,8 @@
-import { cva, type VariantProps } from "class-variance-authority"
+import { type VariantProps } from "class-variance-authority"
 import { type ComponentPropsWithRef, forwardRef, type ReactNode } from "react"
 import { cx } from "src/shared/lib"
 import { Title } from "../typography"
-
-const cardVariants = cva(
-	"text-foreground text-base leading-base list-none font-ant relative bg-background-container rounded",
-	{
-		variants: {
-			variants: {
-				borderless: "",
-				bordered: "border border-border-secondary border-solid",
-			},
-			size: {
-				middle: "",
-				small: "",
-			},
-		},
-		defaultVariants: {
-			variants: "bordered",
-			size: "middle",
-		},
-	}
-)
+import { cardHeaderVariants, cardVariants } from "./card.variants.ts"
 
 export interface CardProps
 	extends ComponentPropsWithRef<"article">,
@@ -29,7 +10,6 @@ export interface CardProps
 	className?: string
 	title?: string
 	extra?: ReactNode
-	hoverable?: boolean
 	classNames?: {
 		header?: string
 		title?: string
@@ -43,7 +23,7 @@ const Card = forwardRef<HTMLElement, CardProps>(
 		{
 			className,
 			title,
-			variants,
+			variant,
 			size,
 			classNames,
 			children,
@@ -58,14 +38,9 @@ const Card = forwardRef<HTMLElement, CardProps>(
 				ref={ref}
 				className={cx(
 					cardVariants({
-						variants,
-						className: cx(
-							{
-								"hover:shadow-card hover:border-transparent transition-shadow duration-mid cursor-pointer":
-									hoverable,
-							},
-							className
-						),
+						variant,
+						hoverable,
+						className,
 					})
 				)}
 				{...props}
@@ -73,19 +48,16 @@ const Card = forwardRef<HTMLElement, CardProps>(
 				{(extra || title) && (
 					<div
 						className={cx(
-							"flex justify-center flex-col min-h-14 mb-[-1px] py-0 px-6 font-semibold border-b border-border-secondary rounded-t-lg",
-							{
-								"min-h-8 px-3": size === "small",
-							}
+							cardHeaderVariants({
+								size,
+								className: classNames?.header,
+							})
 						)}
 					>
 						<Title
 							level={"h5"}
 							className={cx(
-								"text-lg",
-								{
-									"text-base": size === "small",
-								},
+								size === "small" ? "text-base" : "text-lg",
 								classNames?.title
 							)}
 						>
@@ -95,13 +67,7 @@ const Card = forwardRef<HTMLElement, CardProps>(
 					</div>
 				)}
 				<div
-					className={cx(
-						"p-lg",
-						{
-							"p-sm": size === "small",
-						},
-						classNames?.body
-					)}
+					className={cx(size === "small" ? "p-sm" : "p-lg", classNames?.body)}
 				>
 					{children}
 				</div>
