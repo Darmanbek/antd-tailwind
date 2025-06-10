@@ -56,6 +56,7 @@ export default {
 					quaternary: "var(--ant-color-text-quaternary)",
 					placeholder: "var(--ant-color-text-placeholder)",
 					disabled: "var(--ant-color-text-disabled)",
+					description: "var(--ant-color-text-description)",
 				},
 				primary: {
 					DEFAULT: "var(--ant-color-primary)",
@@ -79,10 +80,51 @@ export default {
 					DEFAULT: "var(--ant-color-error)",
 					hover: "var(--ant-color-error-hover)",
 					active: "var(--ant-color-error-active)",
+					foreground: {
+						DEFAULT: "var(--ant-color-error-text)",
+						hover: "var(--ant-color-error-text-hover)",
+						active: "var(--ant-color-error-text-active)",
+					},
 					bg: {
 						DEFAULT: "var(--ant-color-error-bg)",
 						hover: "var(--ant-color-error-bg-filled-hover)",
 						active: "var(--ant-color-error-bg-active)",
+					},
+				},
+				success: {
+					DEFAULT: "var(--ant-color-success)",
+					hover: "var(--ant-color-success-hover)",
+					active: "var(--ant-color-success-active)",
+					foreground: {
+						DEFAULT: "var(--ant-color-success-text)",
+						hover: "var(--ant-color-success-text-hover)",
+						active: "var(--ant-color-success-text-active)",
+					},
+					bg: {
+						DEFAULT: "var(--ant-color-success-bg)",
+						hover: "var(--ant-color-success-bg-hover)",
+					},
+					border: {
+						DEFAULT: "var(--ant-color-success-border)",
+						hover: "var(--ant-color-success-border-hover)",
+					},
+				},
+				warning: {
+					DEFAULT: "var(--ant-color-warning)",
+					hover: "var(--ant-color-warning-hover)",
+					active: "var(--ant-color-warning-active)",
+					foreground: {
+						DEFAULT: "var(--ant-color-warning-text)",
+						hover: "var(--ant-color-warning-text-hover)",
+						active: "var(--ant-color-warning-text-active)",
+					},
+					bg: {
+						DEFAULT: "var(--ant-color-warning-bg)",
+						hover: "var(--ant-color-warning-bg-hover)",
+					},
+					border: {
+						DEFAULT: "var(--ant-color-warning-border)",
+						hover: "var(--ant-color-warning-border-hover)",
 					},
 				},
 				border: {

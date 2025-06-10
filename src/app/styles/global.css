@@ -4,6 +4,7 @@
 @import "font.css";
 
 @import "components/layout.scss";
+@import "components/typography.scss";
 
 @tailwind base;
 

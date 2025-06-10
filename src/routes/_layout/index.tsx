@@ -1,4 +1,5 @@
 import { createFileRoute, Link as TLink } from "@tanstack/react-router"
+import { componentsData } from "src/shared/data"
 import {
 	Card,
 	Divider,
@@ -45,34 +46,41 @@ function RouteComponent() {
 				placeholder={"Search in components"}
 			/>
 			<Divider />
-			<Flex className={"items-center gap-2 mb-6 mt-8"}>
-				<Title
-					level={"h3"}
-					className={"font-medium"}
-				>
-					General
-				</Title>
-				<Tag>4</Tag>
-			</Flex>
-			<div className={"grid grid-cols-4 gap-6"}>
-				<TLink to={"/general/button"}>
-					<Card
-						title={"Buttons"}
-						hoverable={true}
-						size={"small"}
-					>
-						<Flex className={"justify-center items-center"}>
-							<Image
-								preview={false}
-								src={
-									"https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*7va7RKs3YzIAAAAAAAAAAAAADrJ8AQ/original"
-								}
-								alt={"Buttons"}
-							/>
-						</Flex>
-					</Card>
-				</TLink>
-			</div>
+			{componentsData.map((item, index) => (
+				<div key={index}>
+					<Flex className={"items-center gap-2 mb-6 mt-8"}>
+						<Title
+							level={"h3"}
+							className={"font-medium"}
+						>
+							{item.title}
+						</Title>
+						<Tag>4</Tag>
+					</Flex>
+					<div className={"grid grid-cols-4 gap-6"}>
+						{item.components.map((comp, index) => (
+							<TLink
+								key={index}
+								to={comp.href}
+							>
+								<Card
+									title={comp.title}
+									hoverable={true}
+									size={"small"}
+								>
+									<Flex className={"justify-center items-center h-40"}>
+										<Image
+											preview={false}
+											src={comp.icon}
+											alt={"Buttons"}
+										/>
+									</Flex>
+								</Card>
+							</TLink>
+						))}
+					</div>
+				</div>
+			))}
 		</>
 	)
 }

@@ -13,6 +13,12 @@
 import { Route as rootRoute } from "./routes/__root"
 import { Route as LayoutImport } from "./routes/_layout"
 import { Route as LayoutIndexImport } from "./routes/_layout/index"
+import { Route as LayoutLayoutSpaceImport } from "./routes/_layout/layout/space"
+import { Route as LayoutLayoutLayoutImport } from "./routes/_layout/layout/layout"
+import { Route as LayoutLayoutGridImport } from "./routes/_layout/layout/grid"
+import { Route as LayoutLayoutFlexImport } from "./routes/_layout/layout/flex"
+import { Route as LayoutLayoutDividerImport } from "./routes/_layout/layout/divider"
+import { Route as LayoutGeneralTypographyImport } from "./routes/_layout/general/typography"
 import { Route as LayoutGeneralButtonImport } from "./routes/_layout/general/button"
 
 // Create/Update Routes
@@ -25,6 +31,42 @@ const LayoutRoute = LayoutImport.update({
 const LayoutIndexRoute = LayoutIndexImport.update({
   id: "/",
   path: "/",
+  getParentRoute: () => LayoutRoute,
+} as any)
+
+const LayoutLayoutSpaceRoute = LayoutLayoutSpaceImport.update({
+  id: "/layout/space",
+  path: "/layout/space",
+  getParentRoute: () => LayoutRoute,
+} as any)
+
+const LayoutLayoutLayoutRoute = LayoutLayoutLayoutImport.update({
+  id: "/layout/layout",
+  path: "/layout/layout",
+  getParentRoute: () => LayoutRoute,
+} as any)
+
+const LayoutLayoutGridRoute = LayoutLayoutGridImport.update({
+  id: "/layout/grid",
+  path: "/layout/grid",
+  getParentRoute: () => LayoutRoute,
+} as any)
+
+const LayoutLayoutFlexRoute = LayoutLayoutFlexImport.update({
+  id: "/layout/flex",
+  path: "/layout/flex",
+  getParentRoute: () => LayoutRoute,
+} as any)
+
+const LayoutLayoutDividerRoute = LayoutLayoutDividerImport.update({
+  id: "/layout/divider",
+  path: "/layout/divider",
+  getParentRoute: () => LayoutRoute,
+} as any)
+
+const LayoutGeneralTypographyRoute = LayoutGeneralTypographyImport.update({
+  id: "/general/typography",
+  path: "/general/typography",
   getParentRoute: () => LayoutRoute,
 } as any)
 
@@ -59,6 +101,48 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof LayoutGeneralButtonImport
       parentRoute: typeof LayoutImport
     }
+    "/_layout/general/typography": {
+      id: "/_layout/general/typography"
+      path: "/general/typography"
+      fullPath: "/general/typography"
+      preLoaderRoute: typeof LayoutGeneralTypographyImport
+      parentRoute: typeof LayoutImport
+    }
+    "/_layout/layout/divider": {
+      id: "/_layout/layout/divider"
+      path: "/layout/divider"
+      fullPath: "/layout/divider"
+      preLoaderRoute: typeof LayoutLayoutDividerImport
+      parentRoute: typeof LayoutImport
+    }
+    "/_layout/layout/flex": {
+      id: "/_layout/layout/flex"
+      path: "/layout/flex"
+      fullPath: "/layout/flex"
+      preLoaderRoute: typeof LayoutLayoutFlexImport
+      parentRoute: typeof LayoutImport
+    }
+    "/_layout/layout/grid": {
+      id: "/_layout/layout/grid"
+      path: "/layout/grid"
+      fullPath: "/layout/grid"
+      preLoaderRoute: typeof LayoutLayoutGridImport
+      parentRoute: typeof LayoutImport
+    }
+    "/_layout/layout/layout": {
+      id: "/_layout/layout/layout"
+      path: "/layout/layout"
+      fullPath: "/layout/layout"
+      preLoaderRoute: typeof LayoutLayoutLayoutImport
+      parentRoute: typeof LayoutImport
+    }
+    "/_layout/layout/space": {
+      id: "/_layout/layout/space"
+      path: "/layout/space"
+      fullPath: "/layout/space"
+      preLoaderRoute: typeof LayoutLayoutSpaceImport
+      parentRoute: typeof LayoutImport
+    }
   }
 }
 
@@ -67,11 +151,23 @@ declare module "@tanstack/react-router" {
 interface LayoutRouteChildren {
   LayoutIndexRoute: typeof LayoutIndexRoute
   LayoutGeneralButtonRoute: typeof LayoutGeneralButtonRoute
+  LayoutGeneralTypographyRoute: typeof LayoutGeneralTypographyRoute
+  LayoutLayoutDividerRoute: typeof LayoutLayoutDividerRoute
+  LayoutLayoutFlexRoute: typeof LayoutLayoutFlexRoute
+  LayoutLayoutGridRoute: typeof LayoutLayoutGridRoute
+  LayoutLayoutLayoutRoute: typeof LayoutLayoutLayoutRoute
+  LayoutLayoutSpaceRoute: typeof LayoutLayoutSpaceRoute
 }
 
 const LayoutRouteChildren: LayoutRouteChildren = {
   LayoutIndexRoute: LayoutIndexRoute,
   LayoutGeneralButtonRoute: LayoutGeneralButtonRoute,
+  LayoutGeneralTypographyRoute: LayoutGeneralTypographyRoute,
+  LayoutLayoutDividerRoute: LayoutLayoutDividerRoute,
+  LayoutLayoutFlexRoute: LayoutLayoutFlexRoute,
+  LayoutLayoutGridRoute: LayoutLayoutGridRoute,
+  LayoutLayoutLayoutRoute: LayoutLayoutLayoutRoute,
+  LayoutLayoutSpaceRoute: LayoutLayoutSpaceRoute,
 }
 
 const LayoutRouteWithChildren =
@@ -81,11 +177,23 @@ export interface FileRoutesByFullPath {
   "": typeof LayoutRouteWithChildren
   "/": typeof LayoutIndexRoute
   "/general/button": typeof LayoutGeneralButtonRoute
+  "/general/typography": typeof LayoutGeneralTypographyRoute
+  "/layout/divider": typeof LayoutLayoutDividerRoute
+  "/layout/flex": typeof LayoutLayoutFlexRoute
+  "/layout/grid": typeof LayoutLayoutGridRoute
+  "/layout/layout": typeof LayoutLayoutLayoutRoute
+  "/layout/space": typeof LayoutLayoutSpaceRoute
 }
 
 export interface FileRoutesByTo {
   "/": typeof LayoutIndexRoute
   "/general/button": typeof LayoutGeneralButtonRoute
+  "/general/typography": typeof LayoutGeneralTypographyRoute
+  "/layout/divider": typeof LayoutLayoutDividerRoute
+  "/layout/flex": typeof LayoutLayoutFlexRoute
+  "/layout/grid": typeof LayoutLayoutGridRoute
+  "/layout/layout": typeof LayoutLayoutLayoutRoute
+  "/layout/space": typeof LayoutLayoutSpaceRoute
 }
 
 export interface FileRoutesById {
@@ -93,14 +201,47 @@ export interface FileRoutesById {
   "/_layout": typeof LayoutRouteWithChildren
   "/_layout/": typeof LayoutIndexRoute
   "/_layout/general/button": typeof LayoutGeneralButtonRoute
+  "/_layout/general/typography": typeof LayoutGeneralTypographyRoute
+  "/_layout/layout/divider": typeof LayoutLayoutDividerRoute
+  "/_layout/layout/flex": typeof LayoutLayoutFlexRoute
+  "/_layout/layout/grid": typeof LayoutLayoutGridRoute
+  "/_layout/layout/layout": typeof LayoutLayoutLayoutRoute
+  "/_layout/layout/space": typeof LayoutLayoutSpaceRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: "" | "/" | "/general/button"
+  fullPaths:
+    | ""
+    | "/"
+    | "/general/button"
+    | "/general/typography"
+    | "/layout/divider"
+    | "/layout/flex"
+    | "/layout/grid"
+    | "/layout/layout"
+    | "/layout/space"
   fileRoutesByTo: FileRoutesByTo
-  to: "/" | "/general/button"
-  id: "__root__" | "/_layout" | "/_layout/" | "/_layout/general/button"
+  to:
+    | "/"
+    | "/general/button"
+    | "/general/typography"
+    | "/layout/divider"
+    | "/layout/flex"
+    | "/layout/grid"
+    | "/layout/layout"
+    | "/layout/space"
+  id:
+    | "__root__"
+    | "/_layout"
+    | "/_layout/"
+    | "/_layout/general/button"
+    | "/_layout/general/typography"
+    | "/_layout/layout/divider"
+    | "/_layout/layout/flex"
+    | "/_layout/layout/grid"
+    | "/_layout/layout/layout"
+    | "/_layout/layout/space"
   fileRoutesById: FileRoutesById
 }
 
@@ -129,7 +270,13 @@ export const routeTree = rootRoute
       "filePath": "_layout.tsx",
       "children": [
         "/_layout/",
-        "/_layout/general/button"
+        "/_layout/general/button",
+        "/_layout/general/typography",
+        "/_layout/layout/divider",
+        "/_layout/layout/flex",
+        "/_layout/layout/grid",
+        "/_layout/layout/layout",
+        "/_layout/layout/space"
       ]
     },
     "/_layout/": {
@@ -138,6 +285,30 @@ export const routeTree = rootRoute
     },
     "/_layout/general/button": {
       "filePath": "_layout/general/button.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/general/typography": {
+      "filePath": "_layout/general/typography.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/layout/divider": {
+      "filePath": "_layout/layout/divider.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/layout/flex": {
+      "filePath": "_layout/layout/flex.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/layout/grid": {
+      "filePath": "_layout/layout/grid.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/layout/layout": {
+      "filePath": "_layout/layout/layout.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/layout/space": {
+      "filePath": "_layout/layout/space.tsx",
       "parent": "/_layout"
     }
   }

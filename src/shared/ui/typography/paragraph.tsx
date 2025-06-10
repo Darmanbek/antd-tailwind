@@ -14,7 +14,7 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
 		return (
 			<p
 				className={cx(
-					"text-foreground break-words leading-base text-base font-ant",
+					"typography text-foreground break-words leading-base text-base font-ant",
 					className
 				)}
 				ref={ref}

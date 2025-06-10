@@ -25,7 +25,7 @@ export const menuData: MenuItemType[] = [
 	},
 	{
 		key: "/general/typography",
-		label: "Typography",
+		label: <Link to={"/general/typography"}>Typography</Link>,
 	},
 	{
 		key: "/layout",
@@ -34,23 +34,23 @@ export const menuData: MenuItemType[] = [
 	},
 	{
 		key: "/layout/divider",
-		label: "Divider",
+		label: <Link to={"/layout/divider"}>Divider</Link>,
 	},
 	{
 		key: "/layout/flex",
-		label: "Flex",
+		label: <Link to={"/layout/flex"}>Flex</Link>,
 	},
 	{
 		key: "/layout/grid",
-		label: "Grid",
+		label: <Link to={"/layout/grid"}>Grid</Link>,
 	},
 	{
 		key: "/layout/layout",
-		label: "Layout",
+		label: <Link to={"/layout/layout"}>Layout</Link>,
 	},
 	{
 		key: "/layout/space",
-		label: "Space",
+		label: <Link to={"/layout/space"}>Space</Link>,
 	},
 	{
 		key: "/navigation",

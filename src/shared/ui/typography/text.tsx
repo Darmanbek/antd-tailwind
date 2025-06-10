@@ -1,32 +1,65 @@
-import { type DetailedHTMLProps, forwardRef, type HTMLAttributes } from "react"
+import { type VariantProps } from "class-variance-authority"
+import { type ComponentPropsWithRef, forwardRef } from "react"
 import { cx } from "src/shared/lib"
+import { textVariants } from "./text.variants.ts"
 
 export interface TextProps
-	extends DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
+	extends ComponentPropsWithRef<"span">,
+		VariantProps<typeof textVariants> {
 	className?: string
-	type?: "secondary" | "success" | "warning" | "danger"
-	disabled?: boolean
-	mark?: boolean
-	code?: boolean
-	keyboard?: boolean
-	underline?: boolean
-	delete?: boolean
-	strong?: boolean
-	italic?: boolean
-	copyable?: boolean
-	editable?: boolean
 }
 
 const Text = forwardRef<HTMLSpanElement, TextProps>(
-	({ className, type, mark, code, children, ...props }, ref) => {
-		const content = code ? <code>{children}</code> : children
+	(
+		{
+			className,
+			type,
+			mark,
+			code,
+			strong,
+			italic,
+			delete: deleted,
+			keyboard,
+			disabled,
+			underline,
+			copyable,
+			editable,
+			children,
+			...props
+		},
+		ref
+	) => {
+		const Comp = cx({
+			code,
+			mark,
+			strong,
+			i: italic,
+			del: deleted,
+			kbd: keyboard,
+			u: underline,
+		}) as "code" | "mark" | "i" | "del" | "kbd" | "u"
+
+		const content = Comp ? <Comp>{children}</Comp> : children
 
 		return (
 			<span
 				ref={ref}
 				className={cx(
-					"text-base leading-base break-words text-foreground",
-					"[&_code]:mx-[0.2rem] [&_code]:px-[0.4rem] [&_code]:pt-[0.2rem] [&_code]:pb-[0.1rem] [&_code]:text-[85%] [&_code]:font-ant-code [&_code]:bg-gray-400/10 [&_code]:border [&_code]:border-gray-500/20 [&_code]:rounded-xs",
+					"typography",
+					textVariants({
+						type,
+						disabled,
+						mark,
+						code,
+						keyboard,
+						underline,
+						delete: deleted,
+						strong,
+						italic,
+						copyable,
+						editable,
+					}),
+					"",
 					className
 				)}
 				{...props}
