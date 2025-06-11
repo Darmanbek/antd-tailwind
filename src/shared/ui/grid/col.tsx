@@ -1,4 +1,5 @@
 import { type ComponentPropsWithRef, forwardRef } from "react"
+import { cx } from "src/shared/lib"
 
 export interface ColProps extends ComponentPropsWithRef<"div"> {
 	className?: string
@@ -9,7 +10,7 @@ const Col = forwardRef<HTMLDivElement, ColProps>(
 		return (
 			<div
 				ref={ref}
-				className={className}
+				className={cx("w-full", className)}
 				{...props}
 			/>
 		)

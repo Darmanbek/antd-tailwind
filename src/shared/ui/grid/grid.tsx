@@ -1,4 +1,5 @@
 import { type ComponentPropsWithRef, forwardRef } from "react"
+import { cx } from "src/shared/lib"
 
 export interface GridProps extends ComponentPropsWithRef<"div"> {
 	className?: string
@@ -9,7 +10,7 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(
 		return (
 			<div
 				ref={ref}
-				className={className}
+				className={cx("grid", className)}
 				{...props}
 			/>
 		)

@@ -8,13 +8,9 @@ const dividerVariants = cva(
 	"flex items-center my-lg border-t border-solid border-split",
 	{
 		variants: {
-			dashed: {
-				true: "border-dashed",
-				false: "",
-			},
-			dotted: {
-				true: "border-dotted",
-				false: "",
+			variant: {
+				dashed: "border-dashed",
+				dotted: "border-dotted",
 			},
 			orientation: {
 				center: "before:w-1/2 after:w-1/2",
@@ -39,14 +35,13 @@ export interface DividerProps
 }
 
 const Divider = forwardRef<HTMLDivElement, DividerProps>(
-	({ className, children, dashed, dotted, orientation, ...props }, ref) => {
+	({ className, children, variant, orientation, ...props }, ref) => {
 		return (
 			<div
 				ref={ref}
 				className={cx(
 					dividerVariants({
-						dashed,
-						dotted,
+						variant,
 						orientation: orientation
 							? orientation
 							: children

@@ -15,9 +15,12 @@ function RouteComponent() {
 				<p>{content}</p>
 				<Divider />
 				<p>{content}</p>
-				<Divider dashed={true} />
+				<Divider variant={"dashed"} />
 				<p>{content}</p>
-				<Divider dotted={true} />
+				<Divider
+					className={"border-primary"}
+					variant={"dotted"}
+				/>
 				<p>{content}</p>
 				<Divider>Text</Divider>
 				<p>{content}</p>

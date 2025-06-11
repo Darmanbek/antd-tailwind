@@ -15,9 +15,9 @@ const justifyOptions = [
 	"space-evenly",
 ] as const
 
-const gapOptions = ["small", "middle", "large"] as const
-
 const alignOptions = ["start", "center", "end"] as const
+
+const gapOptions = ["none", "small", "middle", "large"] as const
 
 function RouteComponent() {
 	const [justify, setJustify] = useState<FlexProps["justify"]>(
@@ -26,7 +26,7 @@ function RouteComponent() {
 	const [alignItems, setAlignItems] = useState<FlexProps["align"]>(
 		alignOptions[0]
 	)
-	const [gap, setGap] = useState<FlexProps["gap"]>(gapOptions[0])
+	const [gap, setGap] = useState<FlexProps["gap"]>()
 
 	return (
 		<>
@@ -91,8 +91,10 @@ function RouteComponent() {
 					{gapOptions.map((el, index) => (
 						<Button
 							key={index}
-							onClick={() => setGap(el)}
-							type={gap === el ? "primary" : "default"}
+							onClick={() => setGap(el === "none" ? undefined : el)}
+							type={
+								gap === el || (el === "none" && !gap) ? "primary" : "default"
+							}
 						>
 							{el}
 						</Button>
@@ -104,13 +106,13 @@ function RouteComponent() {
 					gap={gap}
 					className={"border rounded border-primary h-28 overflow-hidden"}
 				>
-					<div className={"h-10 w-24 bg-blue-600 rounded"}></div>
-					<div className={"h-10 w-24 bg-blue-600 rounded"}></div>
-					<div className={"h-10 w-24 bg-blue-600 rounded"}></div>
-					<div className={"h-10 w-24 bg-blue-600 rounded"}></div>
+					<Button type={"primary"}>Primary</Button>
+					<Button type={"primary"}>Primary</Button>
+					<Button type={"primary"}>Primary</Button>
+					<Button type={"primary"}>Primary</Button>
 				</Flex>
 			</Card>
-			<Card>
+			<Card title={"Flex Wrap"}>
 				<Flex
 					wrap={true}
 					gap={"small"}
