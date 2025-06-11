@@ -7,7 +7,13 @@ const tagVariants = cva(
 	{
 		variants: {
 			color: {
-				red: "",
+				red: "text-[var(--ant-red-7)] bg-[var(--ant-red-1)] border-[var(--ant-red-3)]",
+				green:
+					"text-[var(--ant-green-7)] bg-[var(--ant-green-1)] border-[var(--ant-green-3)]",
+			},
+			bordered: {
+				true: "",
+				false: "border-none border-0",
 			},
 		},
 	}
@@ -20,13 +26,14 @@ export interface TagProps
 }
 
 const Tag = forwardRef<HTMLSpanElement, TagProps>(
-	({ color, className, ...props }, ref) => {
+	({ color, bordered, className, ...props }, ref) => {
 		return (
 			<span
 				ref={ref}
 				className={cx(
 					tagVariants({
 						color,
+						bordered,
 						className,
 					}),
 					""

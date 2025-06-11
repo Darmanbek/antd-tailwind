@@ -1,10 +1,10 @@
 import { type FC } from "react"
-import { Image, Title } from "src/shared/ui"
+import { Flex, Image, Title } from "src/shared/ui"
 
 const Logo: FC = () => {
 	return (
 		<>
-			<div className={"flex gap-3 items-center"}>
+			<Flex className={"gap-3 items-center"}>
 				<Image
 					width={32}
 					preview={false}
@@ -12,8 +12,8 @@ const Logo: FC = () => {
 					src={"/antd.svg"}
 					alt={"Logo"}
 				/>
-				<Title level={"h4"}>Ant Design</Title>
-			</div>
+				<Title level={"h4"}>Ant Tailwind</Title>
+			</Flex>
 		</>
 	)
 }

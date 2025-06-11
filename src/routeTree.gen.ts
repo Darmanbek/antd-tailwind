@@ -13,12 +13,21 @@
 import { Route as rootRoute } from "./routes/__root"
 import { Route as LayoutImport } from "./routes/_layout"
 import { Route as LayoutIndexImport } from "./routes/_layout/index"
+import { Route as LayoutNavigationTabsImport } from "./routes/_layout/navigation/tabs"
+import { Route as LayoutNavigationStepsImport } from "./routes/_layout/navigation/steps"
+import { Route as LayoutNavigationPaginationImport } from "./routes/_layout/navigation/pagination"
+import { Route as LayoutNavigationMenuImport } from "./routes/_layout/navigation/menu"
+import { Route as LayoutNavigationDropdownImport } from "./routes/_layout/navigation/dropdown"
+import { Route as LayoutNavigationBreadcrumbImport } from "./routes/_layout/navigation/breadcrumb"
+import { Route as LayoutNavigationAnchorImport } from "./routes/_layout/navigation/anchor"
 import { Route as LayoutLayoutSpaceImport } from "./routes/_layout/layout/space"
 import { Route as LayoutLayoutLayoutImport } from "./routes/_layout/layout/layout"
 import { Route as LayoutLayoutGridImport } from "./routes/_layout/layout/grid"
 import { Route as LayoutLayoutFlexImport } from "./routes/_layout/layout/flex"
 import { Route as LayoutLayoutDividerImport } from "./routes/_layout/layout/divider"
 import { Route as LayoutGeneralTypographyImport } from "./routes/_layout/general/typography"
+import { Route as LayoutGeneralIconImport } from "./routes/_layout/general/icon"
+import { Route as LayoutGeneralFloatButtonImport } from "./routes/_layout/general/float-button"
 import { Route as LayoutGeneralButtonImport } from "./routes/_layout/general/button"
 
 // Create/Update Routes
@@ -31,6 +40,52 @@ const LayoutRoute = LayoutImport.update({
 const LayoutIndexRoute = LayoutIndexImport.update({
   id: "/",
   path: "/",
+  getParentRoute: () => LayoutRoute,
+} as any)
+
+const LayoutNavigationTabsRoute = LayoutNavigationTabsImport.update({
+  id: "/navigation/tabs",
+  path: "/navigation/tabs",
+  getParentRoute: () => LayoutRoute,
+} as any)
+
+const LayoutNavigationStepsRoute = LayoutNavigationStepsImport.update({
+  id: "/navigation/steps",
+  path: "/navigation/steps",
+  getParentRoute: () => LayoutRoute,
+} as any)
+
+const LayoutNavigationPaginationRoute = LayoutNavigationPaginationImport.update(
+  {
+    id: "/navigation/pagination",
+    path: "/navigation/pagination",
+    getParentRoute: () => LayoutRoute,
+  } as any,
+)
+
+const LayoutNavigationMenuRoute = LayoutNavigationMenuImport.update({
+  id: "/navigation/menu",
+  path: "/navigation/menu",
+  getParentRoute: () => LayoutRoute,
+} as any)
+
+const LayoutNavigationDropdownRoute = LayoutNavigationDropdownImport.update({
+  id: "/navigation/dropdown",
+  path: "/navigation/dropdown",
+  getParentRoute: () => LayoutRoute,
+} as any)
+
+const LayoutNavigationBreadcrumbRoute = LayoutNavigationBreadcrumbImport.update(
+  {
+    id: "/navigation/breadcrumb",
+    path: "/navigation/breadcrumb",
+    getParentRoute: () => LayoutRoute,
+  } as any,
+)
+
+const LayoutNavigationAnchorRoute = LayoutNavigationAnchorImport.update({
+  id: "/navigation/anchor",
+  path: "/navigation/anchor",
   getParentRoute: () => LayoutRoute,
 } as any)
 
@@ -70,6 +125,18 @@ const LayoutGeneralTypographyRoute = LayoutGeneralTypographyImport.update({
   getParentRoute: () => LayoutRoute,
 } as any)
 
+const LayoutGeneralIconRoute = LayoutGeneralIconImport.update({
+  id: "/general/icon",
+  path: "/general/icon",
+  getParentRoute: () => LayoutRoute,
+} as any)
+
+const LayoutGeneralFloatButtonRoute = LayoutGeneralFloatButtonImport.update({
+  id: "/general/float-button",
+  path: "/general/float-button",
+  getParentRoute: () => LayoutRoute,
+} as any)
+
 const LayoutGeneralButtonRoute = LayoutGeneralButtonImport.update({
   id: "/general/button",
   path: "/general/button",
@@ -99,6 +166,20 @@ declare module "@tanstack/react-router" {
       path: "/general/button"
       fullPath: "/general/button"
       preLoaderRoute: typeof LayoutGeneralButtonImport
+      parentRoute: typeof LayoutImport
+    }
+    "/_layout/general/float-button": {
+      id: "/_layout/general/float-button"
+      path: "/general/float-button"
+      fullPath: "/general/float-button"
+      preLoaderRoute: typeof LayoutGeneralFloatButtonImport
+      parentRoute: typeof LayoutImport
+    }
+    "/_layout/general/icon": {
+      id: "/_layout/general/icon"
+      path: "/general/icon"
+      fullPath: "/general/icon"
+      preLoaderRoute: typeof LayoutGeneralIconImport
       parentRoute: typeof LayoutImport
     }
     "/_layout/general/typography": {
@@ -143,6 +224,55 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof LayoutLayoutSpaceImport
       parentRoute: typeof LayoutImport
     }
+    "/_layout/navigation/anchor": {
+      id: "/_layout/navigation/anchor"
+      path: "/navigation/anchor"
+      fullPath: "/navigation/anchor"
+      preLoaderRoute: typeof LayoutNavigationAnchorImport
+      parentRoute: typeof LayoutImport
+    }
+    "/_layout/navigation/breadcrumb": {
+      id: "/_layout/navigation/breadcrumb"
+      path: "/navigation/breadcrumb"
+      fullPath: "/navigation/breadcrumb"
+      preLoaderRoute: typeof LayoutNavigationBreadcrumbImport
+      parentRoute: typeof LayoutImport
+    }
+    "/_layout/navigation/dropdown": {
+      id: "/_layout/navigation/dropdown"
+      path: "/navigation/dropdown"
+      fullPath: "/navigation/dropdown"
+      preLoaderRoute: typeof LayoutNavigationDropdownImport
+      parentRoute: typeof LayoutImport
+    }
+    "/_layout/navigation/menu": {
+      id: "/_layout/navigation/menu"
+      path: "/navigation/menu"
+      fullPath: "/navigation/menu"
+      preLoaderRoute: typeof LayoutNavigationMenuImport
+      parentRoute: typeof LayoutImport
+    }
+    "/_layout/navigation/pagination": {
+      id: "/_layout/navigation/pagination"
+      path: "/navigation/pagination"
+      fullPath: "/navigation/pagination"
+      preLoaderRoute: typeof LayoutNavigationPaginationImport
+      parentRoute: typeof LayoutImport
+    }
+    "/_layout/navigation/steps": {
+      id: "/_layout/navigation/steps"
+      path: "/navigation/steps"
+      fullPath: "/navigation/steps"
+      preLoaderRoute: typeof LayoutNavigationStepsImport
+      parentRoute: typeof LayoutImport
+    }
+    "/_layout/navigation/tabs": {
+      id: "/_layout/navigation/tabs"
+      path: "/navigation/tabs"
+      fullPath: "/navigation/tabs"
+      preLoaderRoute: typeof LayoutNavigationTabsImport
+      parentRoute: typeof LayoutImport
+    }
   }
 }
 
@@ -151,23 +281,41 @@ declare module "@tanstack/react-router" {
 interface LayoutRouteChildren {
   LayoutIndexRoute: typeof LayoutIndexRoute
   LayoutGeneralButtonRoute: typeof LayoutGeneralButtonRoute
+  LayoutGeneralFloatButtonRoute: typeof LayoutGeneralFloatButtonRoute
+  LayoutGeneralIconRoute: typeof LayoutGeneralIconRoute
   LayoutGeneralTypographyRoute: typeof LayoutGeneralTypographyRoute
   LayoutLayoutDividerRoute: typeof LayoutLayoutDividerRoute
   LayoutLayoutFlexRoute: typeof LayoutLayoutFlexRoute
   LayoutLayoutGridRoute: typeof LayoutLayoutGridRoute
   LayoutLayoutLayoutRoute: typeof LayoutLayoutLayoutRoute
   LayoutLayoutSpaceRoute: typeof LayoutLayoutSpaceRoute
+  LayoutNavigationAnchorRoute: typeof LayoutNavigationAnchorRoute
+  LayoutNavigationBreadcrumbRoute: typeof LayoutNavigationBreadcrumbRoute
+  LayoutNavigationDropdownRoute: typeof LayoutNavigationDropdownRoute
+  LayoutNavigationMenuRoute: typeof LayoutNavigationMenuRoute
+  LayoutNavigationPaginationRoute: typeof LayoutNavigationPaginationRoute
+  LayoutNavigationStepsRoute: typeof LayoutNavigationStepsRoute
+  LayoutNavigationTabsRoute: typeof LayoutNavigationTabsRoute
 }
 
 const LayoutRouteChildren: LayoutRouteChildren = {
   LayoutIndexRoute: LayoutIndexRoute,
   LayoutGeneralButtonRoute: LayoutGeneralButtonRoute,
+  LayoutGeneralFloatButtonRoute: LayoutGeneralFloatButtonRoute,
+  LayoutGeneralIconRoute: LayoutGeneralIconRoute,
   LayoutGeneralTypographyRoute: LayoutGeneralTypographyRoute,
   LayoutLayoutDividerRoute: LayoutLayoutDividerRoute,
   LayoutLayoutFlexRoute: LayoutLayoutFlexRoute,
   LayoutLayoutGridRoute: LayoutLayoutGridRoute,
   LayoutLayoutLayoutRoute: LayoutLayoutLayoutRoute,
   LayoutLayoutSpaceRoute: LayoutLayoutSpaceRoute,
+  LayoutNavigationAnchorRoute: LayoutNavigationAnchorRoute,
+  LayoutNavigationBreadcrumbRoute: LayoutNavigationBreadcrumbRoute,
+  LayoutNavigationDropdownRoute: LayoutNavigationDropdownRoute,
+  LayoutNavigationMenuRoute: LayoutNavigationMenuRoute,
+  LayoutNavigationPaginationRoute: LayoutNavigationPaginationRoute,
+  LayoutNavigationStepsRoute: LayoutNavigationStepsRoute,
+  LayoutNavigationTabsRoute: LayoutNavigationTabsRoute,
 }
 
 const LayoutRouteWithChildren =
@@ -177,23 +325,41 @@ export interface FileRoutesByFullPath {
   "": typeof LayoutRouteWithChildren
   "/": typeof LayoutIndexRoute
   "/general/button": typeof LayoutGeneralButtonRoute
+  "/general/float-button": typeof LayoutGeneralFloatButtonRoute
+  "/general/icon": typeof LayoutGeneralIconRoute
   "/general/typography": typeof LayoutGeneralTypographyRoute
   "/layout/divider": typeof LayoutLayoutDividerRoute
   "/layout/flex": typeof LayoutLayoutFlexRoute
   "/layout/grid": typeof LayoutLayoutGridRoute
   "/layout/layout": typeof LayoutLayoutLayoutRoute
   "/layout/space": typeof LayoutLayoutSpaceRoute
+  "/navigation/anchor": typeof LayoutNavigationAnchorRoute
+  "/navigation/breadcrumb": typeof LayoutNavigationBreadcrumbRoute
+  "/navigation/dropdown": typeof LayoutNavigationDropdownRoute
+  "/navigation/menu": typeof LayoutNavigationMenuRoute
+  "/navigation/pagination": typeof LayoutNavigationPaginationRoute
+  "/navigation/steps": typeof LayoutNavigationStepsRoute
+  "/navigation/tabs": typeof LayoutNavigationTabsRoute
 }
 
 export interface FileRoutesByTo {
   "/": typeof LayoutIndexRoute
   "/general/button": typeof LayoutGeneralButtonRoute
+  "/general/float-button": typeof LayoutGeneralFloatButtonRoute
+  "/general/icon": typeof LayoutGeneralIconRoute
   "/general/typography": typeof LayoutGeneralTypographyRoute
   "/layout/divider": typeof LayoutLayoutDividerRoute
   "/layout/flex": typeof LayoutLayoutFlexRoute
   "/layout/grid": typeof LayoutLayoutGridRoute
   "/layout/layout": typeof LayoutLayoutLayoutRoute
   "/layout/space": typeof LayoutLayoutSpaceRoute
+  "/navigation/anchor": typeof LayoutNavigationAnchorRoute
+  "/navigation/breadcrumb": typeof LayoutNavigationBreadcrumbRoute
+  "/navigation/dropdown": typeof LayoutNavigationDropdownRoute
+  "/navigation/menu": typeof LayoutNavigationMenuRoute
+  "/navigation/pagination": typeof LayoutNavigationPaginationRoute
+  "/navigation/steps": typeof LayoutNavigationStepsRoute
+  "/navigation/tabs": typeof LayoutNavigationTabsRoute
 }
 
 export interface FileRoutesById {
@@ -201,12 +367,21 @@ export interface FileRoutesById {
   "/_layout": typeof LayoutRouteWithChildren
   "/_layout/": typeof LayoutIndexRoute
   "/_layout/general/button": typeof LayoutGeneralButtonRoute
+  "/_layout/general/float-button": typeof LayoutGeneralFloatButtonRoute
+  "/_layout/general/icon": typeof LayoutGeneralIconRoute
   "/_layout/general/typography": typeof LayoutGeneralTypographyRoute
   "/_layout/layout/divider": typeof LayoutLayoutDividerRoute
   "/_layout/layout/flex": typeof LayoutLayoutFlexRoute
   "/_layout/layout/grid": typeof LayoutLayoutGridRoute
   "/_layout/layout/layout": typeof LayoutLayoutLayoutRoute
   "/_layout/layout/space": typeof LayoutLayoutSpaceRoute
+  "/_layout/navigation/anchor": typeof LayoutNavigationAnchorRoute
+  "/_layout/navigation/breadcrumb": typeof LayoutNavigationBreadcrumbRoute
+  "/_layout/navigation/dropdown": typeof LayoutNavigationDropdownRoute
+  "/_layout/navigation/menu": typeof LayoutNavigationMenuRoute
+  "/_layout/navigation/pagination": typeof LayoutNavigationPaginationRoute
+  "/_layout/navigation/steps": typeof LayoutNavigationStepsRoute
+  "/_layout/navigation/tabs": typeof LayoutNavigationTabsRoute
 }
 
 export interface FileRouteTypes {
@@ -215,33 +390,60 @@ export interface FileRouteTypes {
     | ""
     | "/"
     | "/general/button"
+    | "/general/float-button"
+    | "/general/icon"
     | "/general/typography"
     | "/layout/divider"
     | "/layout/flex"
     | "/layout/grid"
     | "/layout/layout"
     | "/layout/space"
+    | "/navigation/anchor"
+    | "/navigation/breadcrumb"
+    | "/navigation/dropdown"
+    | "/navigation/menu"
+    | "/navigation/pagination"
+    | "/navigation/steps"
+    | "/navigation/tabs"
   fileRoutesByTo: FileRoutesByTo
   to:
     | "/"
     | "/general/button"
+    | "/general/float-button"
+    | "/general/icon"
     | "/general/typography"
     | "/layout/divider"
     | "/layout/flex"
     | "/layout/grid"
     | "/layout/layout"
     | "/layout/space"
+    | "/navigation/anchor"
+    | "/navigation/breadcrumb"
+    | "/navigation/dropdown"
+    | "/navigation/menu"
+    | "/navigation/pagination"
+    | "/navigation/steps"
+    | "/navigation/tabs"
   id:
     | "__root__"
     | "/_layout"
     | "/_layout/"
     | "/_layout/general/button"
+    | "/_layout/general/float-button"
+    | "/_layout/general/icon"
     | "/_layout/general/typography"
     | "/_layout/layout/divider"
     | "/_layout/layout/flex"
     | "/_layout/layout/grid"
     | "/_layout/layout/layout"
     | "/_layout/layout/space"
+    | "/_layout/navigation/anchor"
+    | "/_layout/navigation/breadcrumb"
+    | "/_layout/navigation/dropdown"
+    | "/_layout/navigation/menu"
+    | "/_layout/navigation/pagination"
+    | "/_layout/navigation/steps"
+    | "/_layout/navigation/tabs"
   fileRoutesById: FileRoutesById
 }
 
@@ -271,12 +473,21 @@ export const routeTree = rootRoute
       "children": [
         "/_layout/",
         "/_layout/general/button",
+        "/_layout/general/float-button",
+        "/_layout/general/icon",
         "/_layout/general/typography",
         "/_layout/layout/divider",
         "/_layout/layout/flex",
         "/_layout/layout/grid",
         "/_layout/layout/layout",
-        "/_layout/layout/space"
+        "/_layout/layout/space",
+        "/_layout/navigation/anchor",
+        "/_layout/navigation/breadcrumb",
+        "/_layout/navigation/dropdown",
+        "/_layout/navigation/menu",
+        "/_layout/navigation/pagination",
+        "/_layout/navigation/steps",
+        "/_layout/navigation/tabs"
       ]
     },
     "/_layout/": {
@@ -285,6 +496,14 @@ export const routeTree = rootRoute
     },
     "/_layout/general/button": {
       "filePath": "_layout/general/button.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/general/float-button": {
+      "filePath": "_layout/general/float-button.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/general/icon": {
+      "filePath": "_layout/general/icon.tsx",
       "parent": "/_layout"
     },
     "/_layout/general/typography": {
@@ -309,6 +528,34 @@ export const routeTree = rootRoute
     },
     "/_layout/layout/space": {
       "filePath": "_layout/layout/space.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/navigation/anchor": {
+      "filePath": "_layout/navigation/anchor.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/navigation/breadcrumb": {
+      "filePath": "_layout/navigation/breadcrumb.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/navigation/dropdown": {
+      "filePath": "_layout/navigation/dropdown.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/navigation/menu": {
+      "filePath": "_layout/navigation/menu.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/navigation/pagination": {
+      "filePath": "_layout/navigation/pagination.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/navigation/steps": {
+      "filePath": "_layout/navigation/steps.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/navigation/tabs": {
+      "filePath": "_layout/navigation/tabs.tsx",
       "parent": "/_layout"
     }
   }

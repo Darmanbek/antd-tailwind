@@ -50,6 +50,11 @@ const twMerge = extendTailwindMerge({
 					h: ["xs", "sm", "base", "lg"],
 				},
 			],
+			gap: [
+				{
+					gap: ["xs", "sm", "base", "lg"],
+				},
+			],
 		},
 	},
 })

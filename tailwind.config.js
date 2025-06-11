@@ -167,7 +167,9 @@ export default {
 				xl: "var(--ant-padding-xl)",
 			},
 			gap: {
-				xs: "var(--ant-margin-xs)",
+				xs: "var(--ant-padding-xs)",
+				base: "var(--ant-padding)",
+				lg: "var(--ant-padding-lg)",
 			},
 			borderWidth: {
 				DEFAULT: "var(--ant-line-width)",

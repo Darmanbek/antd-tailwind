@@ -1,4 +1,4 @@
-import { createFileRoute, Outlet } from "@tanstack/react-router"
+import { createFileRoute, Outlet, useLocation } from "@tanstack/react-router"
 import { menuData } from "src/shared/data"
 import { Content, Footer, Header, Layout, Menu, Sider } from "src/shared/ui"
 import { Logo } from "src/widgets/logo"
@@ -8,6 +8,8 @@ export const Route = createFileRoute("/_layout")({
 })
 
 function RouteComponent() {
+	const { pathname } = useLocation()
+
 	return (
 		<>
 			<Layout className={"min-h-screen bg-background-container"}>
@@ -25,7 +27,11 @@ function RouteComponent() {
 							"light w-[21rem] sticky max-h-[calc(100vh-6.5rem)] bottom-0 left-0 top-16 overflow-y-auto overflow-x-hidden"
 						}
 					>
-						<Menu items={menuData} />
+						<Menu
+							items={menuData}
+							className={"pb-12"}
+							selectedKeys={[pathname]}
+						/>
 					</Sider>
 					<Layout className={"bg-background-container"}>
 						<Content className={"px-12 pb-12 flex flex-col gap-4"}>

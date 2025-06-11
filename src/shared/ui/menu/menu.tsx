@@ -43,6 +43,7 @@ const Menu = forwardRef<MenuRef, MenuProps>(
 						<MenuItem
 							key={item?.key}
 							className={classNames?.item}
+							extra={item && "extra" in item && item?.extra}
 						>
 							{item?.label}
 						</MenuItem>
