@@ -5,13 +5,20 @@ import { cx } from "src/shared/lib"
 
 export interface MenuDividerProps extends RcMenuDividerProps {
 	className?: string
+	dashed?: boolean
 }
 
 const MenuDivider = forwardRef<HTMLDivElement, MenuDividerProps>(
-	({ className, ...props }) => {
+	({ className, dashed, ...props }) => {
 		return (
 			<RcMenuDivider
-				className={cx("overflow-hidden border-t p-0", className)}
+				className={cx(
+					"overflow-hidden border-t p-0",
+					{
+						"border-dashed": dashed,
+					},
+					className
+				)}
 				{...props}
 			/>
 		)

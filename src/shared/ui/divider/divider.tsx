@@ -4,26 +4,33 @@ import type { ComponentPropsWithRef } from "react"
 import { forwardRef } from "react"
 import { cx } from "src/shared/lib"
 
-const dividerVariants = cva("flex my-lg border-t border-solid border-split", {
-	variants: {
-		dashed: {
-			true: "border-dashed",
-			false: "",
+const dividerVariants = cva(
+	"flex items-center my-lg border-t border-solid border-split",
+	{
+		variants: {
+			dashed: {
+				true: "border-dashed",
+				false: "",
+			},
+			dotted: {
+				true: "border-dotted",
+				false: "",
+			},
+			orientation: {
+				center: "before:w-1/2 after:w-1/2",
+				left: "before:w-[5%] after:w-[95%]",
+				right: "before:w-[95%] after:w-[5%]",
+			},
 		},
-		orientation: {
-			center: "after:w-1/2 before:w-1/2",
-			left: "after:w-[5%] before:w-[95%]",
-			right: "after:w-[95%] before:w-[5%]",
-		},
-	},
-	compoundVariants: [
-		{
-			orientation: ["left", "center", "right"],
-			className:
-				"border-none after:border-t after:border-split after:relative after:transform after:translate-y-1/2 before:border-t before:border-split before:relative before:transform before:translate-y-1/2",
-		},
-	],
-})
+		compoundVariants: [
+			{
+				orientation: ["left", "center", "right"],
+				className:
+					"border-0 after:border-t after:border-inherit after:relative after:transform after:translate-y-1/2 before:border-t before:border-inherit before:relative before:transform before:translate-y-1/2",
+			},
+		],
+	}
+)
 
 export interface DividerProps
 	extends ComponentPropsWithRef<"div">,
@@ -32,13 +39,14 @@ export interface DividerProps
 }
 
 const Divider = forwardRef<HTMLDivElement, DividerProps>(
-	({ className, children, dashed, orientation, ...props }, ref) => {
+	({ className, children, dashed, dotted, orientation, ...props }, ref) => {
 		return (
 			<div
 				ref={ref}
 				className={cx(
 					dividerVariants({
 						dashed,
+						dotted,
 						orientation: orientation
 							? orientation
 							: children

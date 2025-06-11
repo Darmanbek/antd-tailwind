@@ -96,5 +96,23 @@
 }
 
 @layer components {
-	
+	.menu-item-group {
+		.menu-item-group-title {
+			display: flex;
+			width: 100%;
+		}
+	}
+
+	.menu-item {
+		a::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: transparent;
+		}
+	}
 }

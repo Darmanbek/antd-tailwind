@@ -13,16 +13,24 @@ export interface MenuItemGroupProps extends RcMenuItemGroupProps {
 }
 
 const MenuItemGroup = forwardRef<HTMLLIElement, MenuItemGroupProps>(
-	({ className, classNames, ...props }, ref) => {
+	({ className, title, classNames, ...props }, ref) => {
 		return (
 			<RcMenuItemGroup
 				ref={ref}
 				className={cx(
-					"text-base text-ellipsis relative flex items-center h-10 leading-10 list-inside list-disc mx-1 my-1 w-[calc(100%-0.5rem)] whitespace-nowrap transition-colors duration-mid text-foreground-tertiary",
-					"[&_.group-item-group-title]:w-full [&_.group-item-group-title]:py-xs [&_.group-item-group-title]:px-base [&_.group-item-group-title]:pl-base",
-					classNames?.group,
+					"text-base text-ellipsis relative flex items-center list-inside list-disc mx-1 my-1 w-[calc(100%-0.5rem)] whitespace-nowrap transition-colors duration-mid text-foreground-tertiary",
 					className
 				)}
+				title={
+					<span
+						className={cx(
+							"w-full py-xs px-base pl-base leading-base",
+							classNames?.group
+						)}
+					>
+						{title}
+					</span>
+				}
 				{...props}
 			/>
 		)

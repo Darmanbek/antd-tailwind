@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router"
-import type { MenuItemType } from "src/shared/ui/menu"
+import type { ItemType } from "src/shared/ui/menu"
 
-export const menuData: MenuItemType[] = [
+export const menuData: ItemType[] = [
 	{
 		key: "/",
 		label: <Link to={"/"}>Components Overview</Link>,

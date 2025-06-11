@@ -15,8 +15,8 @@ const MenuItem = forwardRef<HTMLLIElement, MenuItemProps>(
 			<RcMenuItem
 				ref={ref}
 				className={cx(
-					"pl-6 overflow-hidden text-base text-ellipsis relative flex items-center h-10 leading-10 list-inside list-disc mx-1 my-1 w-[calc(100%-0.5rem)] whitespace-nowrap cursor-pointer rounded-lg transition-colors duration-mid hover:bg-black/[0.06] active:bg-primary-bg",
-					"[&.group-item-selected]:bg-primary-bg [&.group-item-selected]:text-primary",
+					"pl-6 overflow-hidden text-base text-ellipsis relative flex items-center h-lg leading-lg list-inside list-disc mx-1 my-1 w-[calc(100%-0.5em)] whitespace-nowrap cursor-pointer rounded-lg transition-colors duration-mid hover:bg-black/[0.06] active:bg-primary-bg",
+					"[&.menu-item-selected]:bg-primary-bg [&.menu-item-selected]:text-primary",
 					className
 				)}
 				{...props}

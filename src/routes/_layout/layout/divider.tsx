@@ -17,6 +17,8 @@ function RouteComponent() {
 				<p>{content}</p>
 				<Divider dashed={true} />
 				<p>{content}</p>
+				<Divider dotted={true} />
+				<p>{content}</p>
 				<Divider>Text</Divider>
 				<p>{content}</p>
 				<Divider orientation={"left"}>Left Text</Divider>
