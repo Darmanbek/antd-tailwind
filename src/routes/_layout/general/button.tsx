@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router"
-import { Button, Card, Space } from "src/shared/ui"
+import { Button, Card, Flex, Space } from "src/shared/ui"
 import { UserOutlined } from "src/shared/ui/icon"
 
 export const Route = createFileRoute("/_layout/general/button")({
@@ -10,17 +10,23 @@ function RouteComponent() {
 	return (
 		<>
 			<Card>
-				<Space>
+				<Flex
+					gap={"middle"}
+					wrap={true}
+				>
 					<Button type={"primary"}>Primary Button</Button>
 					<Button type={"filled"}>Filled Button</Button>
 					<Button>Default Button</Button>
 					<Button type={"dashed"}>Dashed Button</Button>
 					<Button type={"text"}>Text Button</Button>
 					<Button type={"link"}>Link Button</Button>
-				</Space>
+				</Flex>
 			</Card>
 			<Card>
-				<Space>
+				<Flex
+					gap={"middle"}
+					wrap={true}
+				>
 					<Button
 						danger={true}
 						type={"primary"}
@@ -57,10 +63,13 @@ function RouteComponent() {
 					>
 						Link Danger Button
 					</Button>
-				</Space>
+				</Flex>
 			</Card>
 			<Card>
-				<Space>
+				<Flex
+					wrap={true}
+					gap={"middle"}
+				>
 					<Button
 						disabled={true}
 						type={"primary"}
@@ -97,7 +106,7 @@ function RouteComponent() {
 					>
 						Link Button(Disabled)
 					</Button>
-				</Space>
+				</Flex>
 			</Card>
 			<Card>
 				<Space>
@@ -222,7 +231,10 @@ function RouteComponent() {
 				</Space>
 			</Card>
 			<Card>
-				<Space className={"space-y-2 space-x-0"}>
+				<Space
+					direction={"vertical"}
+					size={"small"}
+				>
 					<Button
 						block={true}
 						type={"primary"}

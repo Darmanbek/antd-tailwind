@@ -99,7 +99,7 @@ export const menuData: ItemType[] = [
 				bordered={false}
 				color={"green"}
 			>
-				10%
+				50%
 			</Tag>
 		),
 	},

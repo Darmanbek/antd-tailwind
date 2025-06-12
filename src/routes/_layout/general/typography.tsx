@@ -1,14 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router"
-import {
-	Card,
-	Divider,
-	Link,
-	Paragraph,
-	Space,
-	Text,
-	Title,
-	Typography,
-} from "src/shared/ui"
+import { Card, Divider, Link, Paragraph, Space, Text, Title, Typography } from "src/shared/ui"
 
 export const Route = createFileRoute("/_layout/general/typography")({
 	component: RouteComponent,
@@ -25,31 +16,26 @@ function RouteComponent() {
 					<Title>Introduction</Title>
 
 					<Paragraph>
-						In the process of internal desktop applications development, many
-						different design specs and implementations would be involved, which
-						might cause designers and developers difficulties and duplication
-						and reduce the efficiency of development.
+						In the process of internal desktop applications development, many different design specs and implementations
+						would be involved, which might cause designers and developers difficulties and duplication and reduce the
+						efficiency of development.
 					</Paragraph>
 
 					<Paragraph>
-						After massive project practice and summaries, Ant Design, a design
-						language for background applications, is refined by Ant UED Team,
-						which aims to{" "}
+						After massive project practice and summaries, Ant Design, a design language for background applications, is
+						refined by Ant UED Team, which aims to{" "}
 						<Text strong={true}>
-							uniform the user interface specs for internal background projects,
-							lower the unnecessary cost of design differences and
-							implementation and liberate the resources of design and front-end
-							development.
+							uniform the user interface specs for internal background projects, lower the unnecessary cost of design
+							differences and implementation and liberate the resources of design and front-end development.
 						</Text>
 					</Paragraph>
 
 					<Title level={"h2"}>Guidelines and Resources</Title>
 
 					<Paragraph>
-						We supply a series of design principles, practical patterns and high
-						quality design resources (<Text code={true}>Sketch</Text>and
-						<Text code={true}>Axure</Text>), to help people create their product
-						prototypes beautifully and efficiently.
+						We supply a series of design principles, practical patterns and high quality design resources (
+						<Text code={true}>Sketch</Text>and
+						<Text code={true}>Axure</Text>), to help people create their product prototypes beautifully and efficiently.
 					</Paragraph>
 
 					<Paragraph>
@@ -75,36 +61,29 @@ function RouteComponent() {
 					<Title>Introduce</Title>
 
 					<Paragraph>
-						Ant's enterprise-level products are a large and complex system.
-						These products are not only large in scale and complex in function,
-						but also frequently change and are concurrent, often requiring
-						design and development to respond quickly. At the same time, there
-						are many similar pages and components in these products, and some
-						stable and highly reusable content can be obtained through
-						abstraction.
+						Ant's enterprise-level products are a large and complex system. These products are not only large in scale
+						and complex in function, but also frequently change and are concurrent, often requiring design and
+						development to respond quickly. At the same time, there are many similar pages and components in these
+						products, and some stable and highly reusable content can be obtained through abstraction.
 					</Paragraph>
 
 					<Paragraph>
-						With the trend of commercialization, more and more enterprise-level
-						products have further requirements for better user experience. With
-						such an ultimate goal, we (Ant Group Experience Technology
-						Department) have gradually polished a design system that serves
-						enterprise-level products after a lot of project practice and
+						With the trend of commercialization, more and more enterprise-level products have further requirements for
+						better user experience. With such an ultimate goal, we (Ant Group Experience Technology Department) have
+						gradually polished a design system that serves enterprise-level products after a lot of project practice and
 						summary. Ant Design. based on
 						<Text mark={true}>『Certainty』and『Natural』</Text>
-						The design values of modular solutions reduce redundant production
-						costs and allow designers to focus on{" "}
+						The design values of modular solutions reduce redundant production costs and allow designers to focus on{" "}
 						<Text strong={true}>Better user experience</Text>。
 					</Paragraph>
 
 					<Title level={"h2"}>Design resources</Title>
 
 					<Paragraph>
-						We provide comprehensive design principles, best practices and
-						design resource documents (<Text code={true}>Sketch</Text> and
+						We provide comprehensive design principles, best practices and design resource documents (
+						<Text code={true}>Sketch</Text> and
 						<Text code={true}>Axure</Text>
-						）, to help businesses quickly design high-quality product
-						prototypes.
+						）, to help businesses quickly design high-quality product prototypes.
 					</Paragraph>
 
 					<Paragraph>
@@ -132,7 +111,10 @@ function RouteComponent() {
 				</Typography>
 			</Card>
 			<Card>
-				<Space className={"space-x-0 flex flex-col space-y-2"}>
+				<Space
+					direction={"vertical"}
+					className={"items-center"}
+				>
 					<Title level={"h1"}>h1. Ant Design</Title>
 					<Title level={"h2"}>h2. Ant Design</Title>
 					<Title level={"h3"}>h3. Ant Design</Title>
@@ -141,7 +123,10 @@ function RouteComponent() {
 				</Space>
 			</Card>
 			<Card>
-				<Space className={"space-x-0 flex flex-col space-y-2"}>
+				<Space
+					direction={"vertical"}
+					className={"items-center"}
+				>
 					<Text>Ant Design (default)</Text>
 					<Text type={"secondary"}>Ant Design (secondary)</Text>
 					<Text type={"success"}>Ant Design (success)</Text>

@@ -7,17 +7,16 @@ const marginList = ["m", "mx", "my", "mt", "mr", "mb", "ml"] as const
 type MarginKey = (typeof paddingList)[number]
 const sizeList = ["xs", "sm", "base", "md", "lg", "xl"] as const
 
-const padding: Record<PaddingKey, [Record<PaddingKey, string[]>]> =
-	Object.assign(
-		{},
-		...paddingList.map((el) => ({
-			[el]: [
-				{
-					[el]: sizeList,
-				},
-			],
-		}))
-	)
+const padding: Record<PaddingKey, [Record<PaddingKey, string[]>]> = Object.assign(
+	{},
+	...paddingList.map((el) => ({
+		[el]: [
+			{
+				[el]: sizeList,
+			},
+		],
+	}))
+)
 
 const margin: Record<MarginKey, [Record<MarginKey, string[]>]> = Object.assign(
 	{},
@@ -53,6 +52,16 @@ const twMerge = extendTailwindMerge({
 			gap: [
 				{
 					gap: ["xs", "sm", "base", "lg"],
+				},
+			],
+			"space-x": [
+				{
+					"space-x": ["xs", "sm", "base", "lg"],
+				},
+			],
+			"space-y": [
+				{
+					"space-y": ["xs", "sm", "base", "lg"],
 				},
 			],
 		},
