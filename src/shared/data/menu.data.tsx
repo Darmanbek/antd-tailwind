@@ -1,8 +1,10 @@
 import { Link } from "@tanstack/react-router"
-import { Tag } from "src/shared/ui"
+import { Tag, type TagProps } from "src/shared/ui"
 import type { ItemType } from "src/shared/ui/menu"
 
 const toLinkItem = (label: string, key: string) => <Link to={key}>{label}</Link>
+
+const toTagItem = (label: string, color: TagProps["color"] = "green") => <Tag color={color}>{label}</Tag>
 
 export const menuData: ItemType[] = [
 	{
@@ -118,14 +120,7 @@ export const menuData: ItemType[] = [
 	{
 		key: "/layout/space",
 		label: <Link to={"/layout/space"}>Space</Link>,
-		extra: (
-			<Tag
-				bordered={false}
-				color={"green"}
-			>
-				1%
-			</Tag>
-		),
+		extra: toTagItem("80%"),
 	},
 	{
 		key: "/navigation",
@@ -212,6 +207,7 @@ export const menuData: ItemType[] = [
 	{
 		key: "/data-entry/slider",
 		label: toLinkItem("Slider", "/data-entry/slider"),
+		extra: toTagItem("40%"),
 	},
 	{
 		key: "/data-entry/switch",
