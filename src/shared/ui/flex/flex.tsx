@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { type ComponentPropsWithRef, forwardRef } from "react"
 import { cx } from "src/shared/lib"
 
-const flexVariants = cva("flex p-0 m-0", {
+const flexVariants = cva("flex", {
 	variants: {
 		justify: {
 			"flex-start": "justify-start",
@@ -33,9 +33,7 @@ const flexVariants = cva("flex p-0 m-0", {
 	},
 })
 
-export interface FlexProps
-	extends ComponentPropsWithRef<"div">,
-		VariantProps<typeof flexVariants> {
+export interface FlexProps extends ComponentPropsWithRef<"div">, VariantProps<typeof flexVariants> {
 	className?: string
 }
 

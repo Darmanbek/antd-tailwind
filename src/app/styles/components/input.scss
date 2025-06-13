@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+
+@layer base {
+	:root {
+		--ant-input-padding-block: 4px;
+		--ant-input-padding-block-sm: 0px;
+		--ant-input-padding-block-lg: 7px;
+		--ant-input-padding-inline: calc(var(--ant-padding-sm) - var(--ant-line-width));
+		--ant-input-padding-inline-sm: calc(var(--ant-control-padding-horizontal-sm) - var(--ant-line-width));
+		--ant-input-padding-inline-lg: calc(var(--ant-control-padding-horizontal) - var(--ant-line-width));
+		--ant-input-addon-bg: var(--ant-color-fill-alter);
+		--ant-input-active-border-color: var(--ant-color-primary);
+		--ant-input-hover-border-color: var(--ant-color-primary-hover);
+		--ant-input-active-shadow: 0 0 0 var(--ant-control-outline-width) var(--ant-control-outline);
+		--ant-input-error-active-shadow: 0 0 0 var(--ant-control-outline-width) var(--ant-color-error-outline);
+		--ant-input-warning-active-shadow: 0 0 0 var(--ant-control-outline-width) var(--ant-color-warning-outline);
+		--ant-input-hover-bg: var(--ant-color-bg-container);
+		--ant-input-active-bg: var(--ant-color-bg-container);
+		--ant-input-input-font-size: var(--ant-font-size);
+		--ant-input-input-font-size-lg: var(--ant-font-size-lg);
+		--ant-input-input-font-size-sm: var(--ant-font-size);
+	}
+}

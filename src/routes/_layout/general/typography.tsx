@@ -11,7 +11,7 @@ We are working in various visualization fields such as basic charts, graph analy
 function RouteComponent() {
 	return (
 		<>
-			<Card>
+			<Card title={"Typography"}>
 				<Typography className={"overflow-hidden"}>
 					<Title>Introduction</Title>
 
@@ -110,7 +110,7 @@ function RouteComponent() {
 					</Paragraph>
 				</Typography>
 			</Card>
-			<Card>
+			<Card title={"Title level 1, 2, 3, 4, 5"}>
 				<Space
 					direction={"vertical"}
 					className={"items-center"}
@@ -122,7 +122,7 @@ function RouteComponent() {
 					<Title level={"h5"}>h5. Ant Design</Title>
 				</Space>
 			</Card>
-			<Card>
+			<Card title={"Text"}>
 				<Space
 					direction={"vertical"}
 					className={"items-center"}

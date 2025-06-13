@@ -9,7 +9,7 @@ export const Route = createFileRoute("/_layout/general/button")({
 function RouteComponent() {
 	return (
 		<>
-			<Card>
+			<Card title={"Buttons"}>
 				<Flex
 					gap={"middle"}
 					wrap={true}
@@ -22,7 +22,7 @@ function RouteComponent() {
 					<Button type={"link"}>Link Button</Button>
 				</Flex>
 			</Card>
-			<Card>
+			<Card title={"Danger Buttons"}>
 				<Flex
 					gap={"middle"}
 					wrap={true}
@@ -65,7 +65,7 @@ function RouteComponent() {
 					</Button>
 				</Flex>
 			</Card>
-			<Card>
+			<Card title={"Disable Buttons"}>
 				<Flex
 					wrap={true}
 					gap={"middle"}
@@ -108,14 +108,14 @@ function RouteComponent() {
 					</Button>
 				</Flex>
 			</Card>
-			<Card>
+			<Card title={"Small | Middle | Large Buttons"}>
 				<Space>
 					<Button size={"small"}>Small Button</Button>
 					<Button size={"middle"}>Middle Button</Button>
 					<Button size={"large"}>Large Button</Button>
 				</Space>
 			</Card>
-			<Card>
+			<Card title={"Round Buttons"}>
 				<Space>
 					<Button
 						type={"primary"}
@@ -158,7 +158,7 @@ function RouteComponent() {
 					/>
 				</Space>
 			</Card>
-			<Card>
+			<Card title={"Icon Buttons"}>
 				<Space>
 					<Button
 						size={"large"}
@@ -195,7 +195,12 @@ function RouteComponent() {
 					</Button>
 				</Space>
 			</Card>
-			<Card className={"bg-gray-400"}>
+			<Card
+				title={"Ghost Buttons"}
+				classNames={{
+					body: "bg-gray-400",
+				}}
+			>
 				<Space>
 					<Button
 						type={"primary"}
@@ -230,7 +235,7 @@ function RouteComponent() {
 					</Button>
 				</Space>
 			</Card>
-			<Card>
+			<Card title={"Block Buttons"}>
 				<Space
 					direction={"vertical"}
 					size={"small"}

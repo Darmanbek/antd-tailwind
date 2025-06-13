@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router"
-import { Card, Divider } from "src/shared/ui"
+import { Card, Divider, Flex, Tag } from "src/shared/ui"
 
 export const Route = createFileRoute("/_layout/layout/divider")({
 	component: RouteComponent,
@@ -11,7 +11,17 @@ const content =
 function RouteComponent() {
 	return (
 		<>
-			<Card>
+			<Card
+				title={
+					<Flex gap={"small"}>
+						Divider
+						<div>
+							<Tag>dashed</Tag>
+							<Tag>dotted</Tag>
+						</div>
+					</Flex>
+				}
+			>
 				<p>{content}</p>
 				<Divider />
 				<p>{content}</p>

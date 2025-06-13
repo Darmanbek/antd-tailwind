@@ -183,6 +183,7 @@ export const menuData: ItemType[] = [
 	{
 		key: "/data-entry/input",
 		label: toLinkItem("Input", "/data-entry/input"),
+		extra: toTagItem("40%"),
 	},
 	{
 		key: "/data-entry/input-number",

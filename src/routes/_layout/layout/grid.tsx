@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { type PropsWithChildren, useState } from "react"
 import { cx } from "src/shared/lib"
-import { Card, Flex, Grid, GridCol, type GridColProps, Slider } from "src/shared/ui"
+import { Card, Flex, Grid, GridCol, type GridColProps, Slider, Tag } from "src/shared/ui"
 
 export const Route = createFileRoute("/_layout/layout/grid")({
 	component: RouteComponent,
@@ -18,7 +18,7 @@ function RouteComponent() {
 
 	return (
 		<>
-			<Card>
+			<Card title={"Grid"}>
 				<Grid gutter={"middle"}>
 					<GridCol span={6}>
 						<Box>col-6</Box>
@@ -79,7 +79,17 @@ function RouteComponent() {
 					</GridCol>
 				</Grid>
 			</Card>
-			<Card>
+			<Card
+				title={
+					<Flex gap={"small"}>
+						Grid
+						<div>
+							<Tag>span</Tag>
+							<Tag>offset</Tag>
+						</div>
+					</Flex>
+				}
+			>
 				<Grid gutter={"middle"}>
 					<GridCol
 						span={6}
@@ -95,7 +105,16 @@ function RouteComponent() {
 					</GridCol>
 				</Grid>
 			</Card>
-			<Card>
+			<Card
+				title={
+					<Flex gap={"small"}>
+						Grid
+						<div>
+							<Tag>span 1</Tag> ... <Tag>span 24</Tag>
+						</div>
+					</Flex>
+				}
+			>
 				<p></p>
 				<Flex
 					wrap={true}
@@ -105,7 +124,7 @@ function RouteComponent() {
 						min={1}
 						max={24}
 						value={Number(span)}
-						onChange={(value) => setSpan(Number(value) as any)}
+						onChange={(value) => setSpan(Number(value) as GridColProps["span"])}
 					/>
 					{/*{spanOptions.map((el, index) => (*/}
 					{/*	<Button*/}

@@ -1,21 +1,18 @@
 import { cva, type VariantProps } from "class-variance-authority"
-import {
-	type DetailedHTMLProps,
-	forwardRef,
-	type InputHTMLAttributes,
-} from "react"
+import { type DetailedHTMLProps, forwardRef, type InputHTMLAttributes } from "react"
 import { cx } from "src/shared/lib"
 
 const inputVariants = cva(
-	"outline-none placeholder:text-foreground-placeholder placeholder:select-none placeholder:opacity-100 placeholder-shown:text-ellipsis m-0 text-foreground font-ant relative inline-block w-full min-w-0 transition-all duration-mid list-none",
+	"outline-none placeholder:text-foreground-placeholder placeholder:select-none placeholder:opacity-100 placeholder-shown:text-ellipsis m-0 text-foreground font-ant relative inline-block w-full border border-solid border-transparent min-w-0 transition-all duration-mid list-none",
 	{
 		variants: {
 			variant: {
 				outlined:
-					"bg-container border border-solid border-border hover:border-primary focus:border-primary focus:ring-1 focus:shadow-primary",
-				filled: "",
+					"bg-container border-border hover:border-primary focus:border-primary focus:ring-1 focus:shadow-primary",
+				filled:
+					"bg-fill-tertiary hover:bg-fill-secondary focus:bg-background-container focus:border-primary focus:ring-1 focus:shadow-primary",
 				borderless: "bg-transparent border-none",
-				underlined: "",
+				underlined: "bg-container border-0 border-b border-border hover:border-primary focus:border-primary",
 			},
 			size: {
 				large: "py-xs px-sm text-lg leading-lg rounded-lg",
@@ -23,6 +20,12 @@ const inputVariants = cva(
 				small: "py-0 px-xxs text-sm leading-base rounded-sm",
 			},
 		},
+		compoundVariants: [
+			{
+				variant: "underlined",
+				className: "rounded-none",
+			},
+		],
 		defaultVariants: {
 			variant: "outlined",
 			size: "middle",
@@ -31,36 +34,28 @@ const inputVariants = cva(
 )
 
 export interface InputProps
-	extends Omit<
-			DetailedHTMLProps<
-				InputHTMLAttributes<HTMLInputElement>,
-				HTMLInputElement
-			>,
-			"size"
-		>,
+	extends Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, "size">,
 		VariantProps<typeof inputVariants> {
 	className?: string
 	inputSize?: number
 }
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
-	({ className, inputSize, variant, size, ...props }, ref) => {
-		return (
-			<input
-				ref={ref}
-				className={cx(
-					inputVariants({
-						variant,
-						size,
-						className,
-					})
-				)}
-				size={inputSize}
-				{...props}
-			/>
-		)
-	}
-)
+const Input = forwardRef<HTMLInputElement, InputProps>(({ className, inputSize, variant, size, ...props }, ref) => {
+	return (
+		<input
+			ref={ref}
+			className={cx(
+				inputVariants({
+					variant,
+					size,
+					className,
+				})
+			)}
+			size={inputSize}
+			{...props}
+		/>
+	)
+})
 Input.displayName = "Input"
 
 export { Input }

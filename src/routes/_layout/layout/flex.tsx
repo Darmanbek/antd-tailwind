@@ -1,36 +1,35 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { useState } from "react"
-import { Button, Card, Flex, type FlexProps } from "src/shared/ui"
+import { Button, Card, Flex, type FlexProps, Tag } from "src/shared/ui"
 
 export const Route = createFileRoute("/_layout/layout/flex")({
 	component: RouteComponent,
 })
 
-const justifyOptions = [
-	"flex-start",
-	"center",
-	"flex-end",
-	"space-between",
-	"space-around",
-	"space-evenly",
-] as const
+const justifyOptions = ["flex-start", "center", "flex-end", "space-between", "space-around", "space-evenly"] as const
 
 const alignOptions = ["start", "center", "end"] as const
 
 const gapOptions = ["none", "small", "middle", "large"] as const
 
 function RouteComponent() {
-	const [justify, setJustify] = useState<FlexProps["justify"]>(
-		justifyOptions[0]
-	)
-	const [alignItems, setAlignItems] = useState<FlexProps["align"]>(
-		alignOptions[0]
-	)
+	const [justify, setJustify] = useState<FlexProps["justify"]>(justifyOptions[0])
+	const [alignItems, setAlignItems] = useState<FlexProps["align"]>(alignOptions[0])
 	const [gap, setGap] = useState<FlexProps["gap"]>()
 
 	return (
 		<>
-			<Card>
+			<Card
+				title={
+					<Flex gap={"small"}>
+						Flex
+						<div>
+							<Tag>horizontal</Tag>
+							<Tag>vertical</Tag>
+						</div>
+					</Flex>
+				}
+			>
 				<Flex
 					vertical={true}
 					className={"gap-2"}
@@ -52,7 +51,18 @@ function RouteComponent() {
 					</Flex>
 				</Flex>
 			</Card>
-			<Card>
+			<Card
+				title={
+					<Flex gap={"small"}>
+						Flex
+						<div>
+							<Tag>justify</Tag>
+							<Tag>align</Tag>
+							<Tag>gap</Tag>
+						</div>
+					</Flex>
+				}
+			>
 				<p>Select justify :</p>
 				<Flex
 					gap={"middle"}
@@ -92,9 +102,7 @@ function RouteComponent() {
 						<Button
 							key={index}
 							onClick={() => setGap(el === "none" ? undefined : el)}
-							type={
-								gap === el || (el === "none" && !gap) ? "primary" : "default"
-							}
+							type={gap === el || (el === "none" && !gap) ? "primary" : "default"}
 						>
 							{el}
 						</Button>
@@ -112,7 +120,16 @@ function RouteComponent() {
 					<Button type={"primary"}>Primary</Button>
 				</Flex>
 			</Card>
-			<Card title={"Flex Wrap"}>
+			<Card
+				title={
+					<Flex gap={"small"}>
+						Flex
+						<div>
+							<Tag>wrap</Tag>
+						</div>
+					</Flex>
+				}
+			>
 				<Flex
 					wrap={true}
 					gap={"small"}

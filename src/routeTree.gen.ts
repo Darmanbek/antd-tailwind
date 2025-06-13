@@ -30,6 +30,7 @@ import { Route as LayoutGeneralIconImport } from "./routes/_layout/general/icon"
 import { Route as LayoutGeneralFloatButtonImport } from "./routes/_layout/general/float-button"
 import { Route as LayoutGeneralButtonImport } from "./routes/_layout/general/button"
 import { Route as LayoutDataEntrySliderImport } from "./routes/_layout/data-entry/slider"
+import { Route as LayoutDataEntryInputImport } from "./routes/_layout/data-entry/input"
 import { Route as LayoutDataDisplayTagImport } from "./routes/_layout/data-display/tag"
 
 // Create/Update Routes
@@ -151,6 +152,12 @@ const LayoutDataEntrySliderRoute = LayoutDataEntrySliderImport.update({
   getParentRoute: () => LayoutRoute,
 } as any)
 
+const LayoutDataEntryInputRoute = LayoutDataEntryInputImport.update({
+  id: "/data-entry/input",
+  path: "/data-entry/input",
+  getParentRoute: () => LayoutRoute,
+} as any)
+
 const LayoutDataDisplayTagRoute = LayoutDataDisplayTagImport.update({
   id: "/data-display/tag",
   path: "/data-display/tag",
@@ -180,6 +187,13 @@ declare module "@tanstack/react-router" {
       path: "/data-display/tag"
       fullPath: "/data-display/tag"
       preLoaderRoute: typeof LayoutDataDisplayTagImport
+      parentRoute: typeof LayoutImport
+    }
+    "/_layout/data-entry/input": {
+      id: "/_layout/data-entry/input"
+      path: "/data-entry/input"
+      fullPath: "/data-entry/input"
+      preLoaderRoute: typeof LayoutDataEntryInputImport
       parentRoute: typeof LayoutImport
     }
     "/_layout/data-entry/slider": {
@@ -309,6 +323,7 @@ declare module "@tanstack/react-router" {
 interface LayoutRouteChildren {
   LayoutIndexRoute: typeof LayoutIndexRoute
   LayoutDataDisplayTagRoute: typeof LayoutDataDisplayTagRoute
+  LayoutDataEntryInputRoute: typeof LayoutDataEntryInputRoute
   LayoutDataEntrySliderRoute: typeof LayoutDataEntrySliderRoute
   LayoutGeneralButtonRoute: typeof LayoutGeneralButtonRoute
   LayoutGeneralFloatButtonRoute: typeof LayoutGeneralFloatButtonRoute
@@ -331,6 +346,7 @@ interface LayoutRouteChildren {
 const LayoutRouteChildren: LayoutRouteChildren = {
   LayoutIndexRoute: LayoutIndexRoute,
   LayoutDataDisplayTagRoute: LayoutDataDisplayTagRoute,
+  LayoutDataEntryInputRoute: LayoutDataEntryInputRoute,
   LayoutDataEntrySliderRoute: LayoutDataEntrySliderRoute,
   LayoutGeneralButtonRoute: LayoutGeneralButtonRoute,
   LayoutGeneralFloatButtonRoute: LayoutGeneralFloatButtonRoute,
@@ -357,6 +373,7 @@ export interface FileRoutesByFullPath {
   "": typeof LayoutRouteWithChildren
   "/": typeof LayoutIndexRoute
   "/data-display/tag": typeof LayoutDataDisplayTagRoute
+  "/data-entry/input": typeof LayoutDataEntryInputRoute
   "/data-entry/slider": typeof LayoutDataEntrySliderRoute
   "/general/button": typeof LayoutGeneralButtonRoute
   "/general/float-button": typeof LayoutGeneralFloatButtonRoute
@@ -379,6 +396,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   "/": typeof LayoutIndexRoute
   "/data-display/tag": typeof LayoutDataDisplayTagRoute
+  "/data-entry/input": typeof LayoutDataEntryInputRoute
   "/data-entry/slider": typeof LayoutDataEntrySliderRoute
   "/general/button": typeof LayoutGeneralButtonRoute
   "/general/float-button": typeof LayoutGeneralFloatButtonRoute
@@ -403,6 +421,7 @@ export interface FileRoutesById {
   "/_layout": typeof LayoutRouteWithChildren
   "/_layout/": typeof LayoutIndexRoute
   "/_layout/data-display/tag": typeof LayoutDataDisplayTagRoute
+  "/_layout/data-entry/input": typeof LayoutDataEntryInputRoute
   "/_layout/data-entry/slider": typeof LayoutDataEntrySliderRoute
   "/_layout/general/button": typeof LayoutGeneralButtonRoute
   "/_layout/general/float-button": typeof LayoutGeneralFloatButtonRoute
@@ -428,6 +447,7 @@ export interface FileRouteTypes {
     | ""
     | "/"
     | "/data-display/tag"
+    | "/data-entry/input"
     | "/data-entry/slider"
     | "/general/button"
     | "/general/float-button"
@@ -449,6 +469,7 @@ export interface FileRouteTypes {
   to:
     | "/"
     | "/data-display/tag"
+    | "/data-entry/input"
     | "/data-entry/slider"
     | "/general/button"
     | "/general/float-button"
@@ -471,6 +492,7 @@ export interface FileRouteTypes {
     | "/_layout"
     | "/_layout/"
     | "/_layout/data-display/tag"
+    | "/_layout/data-entry/input"
     | "/_layout/data-entry/slider"
     | "/_layout/general/button"
     | "/_layout/general/float-button"
@@ -517,6 +539,7 @@ export const routeTree = rootRoute
       "children": [
         "/_layout/",
         "/_layout/data-display/tag",
+        "/_layout/data-entry/input",
         "/_layout/data-entry/slider",
         "/_layout/general/button",
         "/_layout/general/float-button",
@@ -542,6 +565,10 @@ export const routeTree = rootRoute
     },
     "/_layout/data-display/tag": {
       "filePath": "_layout/data-display/tag.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/data-entry/input": {
+      "filePath": "_layout/data-entry/input.tsx",
       "parent": "/_layout"
     },
     "/_layout/data-entry/slider": {

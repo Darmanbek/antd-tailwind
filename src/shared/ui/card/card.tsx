@@ -4,11 +4,9 @@ import { cx } from "src/shared/lib"
 import { Title } from "../typography"
 import { cardHeaderVariants, cardVariants } from "./card.variants.ts"
 
-export interface CardProps
-	extends ComponentPropsWithRef<"article">,
-		VariantProps<typeof cardVariants> {
+export interface CardProps extends Omit<ComponentPropsWithRef<"article">, "title">, VariantProps<typeof cardVariants> {
 	className?: string
-	title?: string
+	title?: ReactNode
 	extra?: ReactNode
 	classNames?: {
 		header?: string
@@ -19,20 +17,9 @@ export interface CardProps
 }
 
 const Card = forwardRef<HTMLElement, CardProps>(
-	(
-		{
-			className,
-			title,
-			variant,
-			size,
-			classNames,
-			children,
-			extra,
-			hoverable,
-			...props
-		},
-		ref
-	) => {
+	({ className, title, variant, size, classNames, children, extra, hoverable, ...props }, ref) => {
+		const titleClassName = cx(size === "small" ? "text-base" : "text-lg", classNames?.title)
+
 		return (
 			<article
 				ref={ref}
@@ -54,23 +41,20 @@ const Card = forwardRef<HTMLElement, CardProps>(
 							})
 						)}
 					>
-						<Title
-							level={"h5"}
-							className={cx(
-								size === "small" ? "text-base" : "text-lg",
-								classNames?.title
-							)}
-						>
-							{title}
-						</Title>
+						{typeof title === "string" ? (
+							<Title
+								level={"h5"}
+								className={titleClassName}
+							>
+								{title}
+							</Title>
+						) : (
+							<div className={titleClassName}>{title}</div>
+						)}
 						{extra && <div className={"ml-auto font-normal"}>{extra}</div>}
 					</div>
 				)}
-				<div
-					className={cx(size === "small" ? "p-sm" : "p-lg", classNames?.body)}
-				>
-					{children}
-				</div>
+				<div className={cx(size === "small" ? "p-sm" : "p-lg", classNames?.body)}>{children}</div>
 			</article>
 		)
 	}

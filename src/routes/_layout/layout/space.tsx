@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { useState } from "react"
-import { Button, Card, Space, type SpaceProps } from "src/shared/ui"
+import { Button, Card, Flex, Space, type SpaceProps, Tag } from "src/shared/ui"
 
 export const Route = createFileRoute("/_layout/layout/space")({
 	component: RouteComponent,
@@ -15,7 +15,7 @@ function RouteComponent() {
 
 	return (
 		<>
-			<Card>
+			<Card title={"Space"}>
 				<Space>
 					<div className={"bg-blue-600 py-4 w-32 text-center text-white"}>Content</div>
 					<div className={"bg-blue-600 py-4 w-32 text-center text-white"}>Content</div>
@@ -30,7 +30,17 @@ function RouteComponent() {
 					<div className={"bg-blue-600 py-4 w-32 text-center text-white"}>Content</div>
 				</Space>
 			</Card>
-			<Card>
+			<Card
+				title={
+					<Flex gap={"small"}>
+						Space
+						<div>
+							<Tag>direction</Tag>
+							<Tag>size</Tag>
+						</div>
+					</Flex>
+				}
+			>
 				<Space>
 					<p>Direction :</p>
 					{directionOptions.map((el, index) => (
