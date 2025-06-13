@@ -30,6 +30,7 @@ import { Route as LayoutGeneralIconImport } from "./routes/_layout/general/icon"
 import { Route as LayoutGeneralFloatButtonImport } from "./routes/_layout/general/float-button"
 import { Route as LayoutGeneralButtonImport } from "./routes/_layout/general/button"
 import { Route as LayoutDataEntrySliderImport } from "./routes/_layout/data-entry/slider"
+import { Route as LayoutDataDisplayTagImport } from "./routes/_layout/data-display/tag"
 
 // Create/Update Routes
 
@@ -150,6 +151,12 @@ const LayoutDataEntrySliderRoute = LayoutDataEntrySliderImport.update({
   getParentRoute: () => LayoutRoute,
 } as any)
 
+const LayoutDataDisplayTagRoute = LayoutDataDisplayTagImport.update({
+  id: "/data-display/tag",
+  path: "/data-display/tag",
+  getParentRoute: () => LayoutRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module "@tanstack/react-router" {
@@ -166,6 +173,13 @@ declare module "@tanstack/react-router" {
       path: "/"
       fullPath: "/"
       preLoaderRoute: typeof LayoutIndexImport
+      parentRoute: typeof LayoutImport
+    }
+    "/_layout/data-display/tag": {
+      id: "/_layout/data-display/tag"
+      path: "/data-display/tag"
+      fullPath: "/data-display/tag"
+      preLoaderRoute: typeof LayoutDataDisplayTagImport
       parentRoute: typeof LayoutImport
     }
     "/_layout/data-entry/slider": {
@@ -294,6 +308,7 @@ declare module "@tanstack/react-router" {
 
 interface LayoutRouteChildren {
   LayoutIndexRoute: typeof LayoutIndexRoute
+  LayoutDataDisplayTagRoute: typeof LayoutDataDisplayTagRoute
   LayoutDataEntrySliderRoute: typeof LayoutDataEntrySliderRoute
   LayoutGeneralButtonRoute: typeof LayoutGeneralButtonRoute
   LayoutGeneralFloatButtonRoute: typeof LayoutGeneralFloatButtonRoute
@@ -315,6 +330,7 @@ interface LayoutRouteChildren {
 
 const LayoutRouteChildren: LayoutRouteChildren = {
   LayoutIndexRoute: LayoutIndexRoute,
+  LayoutDataDisplayTagRoute: LayoutDataDisplayTagRoute,
   LayoutDataEntrySliderRoute: LayoutDataEntrySliderRoute,
   LayoutGeneralButtonRoute: LayoutGeneralButtonRoute,
   LayoutGeneralFloatButtonRoute: LayoutGeneralFloatButtonRoute,
@@ -340,6 +356,7 @@ const LayoutRouteWithChildren =
 export interface FileRoutesByFullPath {
   "": typeof LayoutRouteWithChildren
   "/": typeof LayoutIndexRoute
+  "/data-display/tag": typeof LayoutDataDisplayTagRoute
   "/data-entry/slider": typeof LayoutDataEntrySliderRoute
   "/general/button": typeof LayoutGeneralButtonRoute
   "/general/float-button": typeof LayoutGeneralFloatButtonRoute
@@ -361,6 +378,7 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   "/": typeof LayoutIndexRoute
+  "/data-display/tag": typeof LayoutDataDisplayTagRoute
   "/data-entry/slider": typeof LayoutDataEntrySliderRoute
   "/general/button": typeof LayoutGeneralButtonRoute
   "/general/float-button": typeof LayoutGeneralFloatButtonRoute
@@ -384,6 +402,7 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   "/_layout": typeof LayoutRouteWithChildren
   "/_layout/": typeof LayoutIndexRoute
+  "/_layout/data-display/tag": typeof LayoutDataDisplayTagRoute
   "/_layout/data-entry/slider": typeof LayoutDataEntrySliderRoute
   "/_layout/general/button": typeof LayoutGeneralButtonRoute
   "/_layout/general/float-button": typeof LayoutGeneralFloatButtonRoute
@@ -408,6 +427,7 @@ export interface FileRouteTypes {
   fullPaths:
     | ""
     | "/"
+    | "/data-display/tag"
     | "/data-entry/slider"
     | "/general/button"
     | "/general/float-button"
@@ -428,6 +448,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | "/"
+    | "/data-display/tag"
     | "/data-entry/slider"
     | "/general/button"
     | "/general/float-button"
@@ -449,6 +470,7 @@ export interface FileRouteTypes {
     | "__root__"
     | "/_layout"
     | "/_layout/"
+    | "/_layout/data-display/tag"
     | "/_layout/data-entry/slider"
     | "/_layout/general/button"
     | "/_layout/general/float-button"
@@ -494,6 +516,7 @@ export const routeTree = rootRoute
       "filePath": "_layout.tsx",
       "children": [
         "/_layout/",
+        "/_layout/data-display/tag",
         "/_layout/data-entry/slider",
         "/_layout/general/button",
         "/_layout/general/float-button",
@@ -515,6 +538,10 @@ export const routeTree = rootRoute
     },
     "/_layout/": {
       "filePath": "_layout/index.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/data-display/tag": {
+      "filePath": "_layout/data-display/tag.tsx",
       "parent": "/_layout"
     },
     "/_layout/data-entry/slider": {
