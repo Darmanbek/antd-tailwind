@@ -32,6 +32,7 @@ import { Route as LayoutGeneralButtonImport } from "./routes/_layout/general/but
 import { Route as LayoutDataEntrySliderImport } from "./routes/_layout/data-entry/slider"
 import { Route as LayoutDataEntryInputImport } from "./routes/_layout/data-entry/input"
 import { Route as LayoutDataDisplayTagImport } from "./routes/_layout/data-display/tag"
+import { Route as LayoutDataDisplaySegmentedImport } from "./routes/_layout/data-display/segmented"
 
 // Create/Update Routes
 
@@ -164,6 +165,14 @@ const LayoutDataDisplayTagRoute = LayoutDataDisplayTagImport.update({
   getParentRoute: () => LayoutRoute,
 } as any)
 
+const LayoutDataDisplaySegmentedRoute = LayoutDataDisplaySegmentedImport.update(
+  {
+    id: "/data-display/segmented",
+    path: "/data-display/segmented",
+    getParentRoute: () => LayoutRoute,
+  } as any,
+)
+
 // Populate the FileRoutesByPath interface
 
 declare module "@tanstack/react-router" {
@@ -180,6 +189,13 @@ declare module "@tanstack/react-router" {
       path: "/"
       fullPath: "/"
       preLoaderRoute: typeof LayoutIndexImport
+      parentRoute: typeof LayoutImport
+    }
+    "/_layout/data-display/segmented": {
+      id: "/_layout/data-display/segmented"
+      path: "/data-display/segmented"
+      fullPath: "/data-display/segmented"
+      preLoaderRoute: typeof LayoutDataDisplaySegmentedImport
       parentRoute: typeof LayoutImport
     }
     "/_layout/data-display/tag": {
@@ -322,6 +338,7 @@ declare module "@tanstack/react-router" {
 
 interface LayoutRouteChildren {
   LayoutIndexRoute: typeof LayoutIndexRoute
+  LayoutDataDisplaySegmentedRoute: typeof LayoutDataDisplaySegmentedRoute
   LayoutDataDisplayTagRoute: typeof LayoutDataDisplayTagRoute
   LayoutDataEntryInputRoute: typeof LayoutDataEntryInputRoute
   LayoutDataEntrySliderRoute: typeof LayoutDataEntrySliderRoute
@@ -345,6 +362,7 @@ interface LayoutRouteChildren {
 
 const LayoutRouteChildren: LayoutRouteChildren = {
   LayoutIndexRoute: LayoutIndexRoute,
+  LayoutDataDisplaySegmentedRoute: LayoutDataDisplaySegmentedRoute,
   LayoutDataDisplayTagRoute: LayoutDataDisplayTagRoute,
   LayoutDataEntryInputRoute: LayoutDataEntryInputRoute,
   LayoutDataEntrySliderRoute: LayoutDataEntrySliderRoute,
@@ -372,6 +390,7 @@ const LayoutRouteWithChildren =
 export interface FileRoutesByFullPath {
   "": typeof LayoutRouteWithChildren
   "/": typeof LayoutIndexRoute
+  "/data-display/segmented": typeof LayoutDataDisplaySegmentedRoute
   "/data-display/tag": typeof LayoutDataDisplayTagRoute
   "/data-entry/input": typeof LayoutDataEntryInputRoute
   "/data-entry/slider": typeof LayoutDataEntrySliderRoute
@@ -395,6 +414,7 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   "/": typeof LayoutIndexRoute
+  "/data-display/segmented": typeof LayoutDataDisplaySegmentedRoute
   "/data-display/tag": typeof LayoutDataDisplayTagRoute
   "/data-entry/input": typeof LayoutDataEntryInputRoute
   "/data-entry/slider": typeof LayoutDataEntrySliderRoute
@@ -420,6 +440,7 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   "/_layout": typeof LayoutRouteWithChildren
   "/_layout/": typeof LayoutIndexRoute
+  "/_layout/data-display/segmented": typeof LayoutDataDisplaySegmentedRoute
   "/_layout/data-display/tag": typeof LayoutDataDisplayTagRoute
   "/_layout/data-entry/input": typeof LayoutDataEntryInputRoute
   "/_layout/data-entry/slider": typeof LayoutDataEntrySliderRoute
@@ -446,6 +467,7 @@ export interface FileRouteTypes {
   fullPaths:
     | ""
     | "/"
+    | "/data-display/segmented"
     | "/data-display/tag"
     | "/data-entry/input"
     | "/data-entry/slider"
@@ -468,6 +490,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | "/"
+    | "/data-display/segmented"
     | "/data-display/tag"
     | "/data-entry/input"
     | "/data-entry/slider"
@@ -491,6 +514,7 @@ export interface FileRouteTypes {
     | "__root__"
     | "/_layout"
     | "/_layout/"
+    | "/_layout/data-display/segmented"
     | "/_layout/data-display/tag"
     | "/_layout/data-entry/input"
     | "/_layout/data-entry/slider"
@@ -538,6 +562,7 @@ export const routeTree = rootRoute
       "filePath": "_layout.tsx",
       "children": [
         "/_layout/",
+        "/_layout/data-display/segmented",
         "/_layout/data-display/tag",
         "/_layout/data-entry/input",
         "/_layout/data-entry/slider",
@@ -561,6 +586,10 @@ export const routeTree = rootRoute
     },
     "/_layout/": {
       "filePath": "_layout/index.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/data-display/segmented": {
+      "filePath": "_layout/data-display/segmented.tsx",
       "parent": "/_layout"
     },
     "/_layout/data-display/tag": {

@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+
+@layer base {
+	:root {
+		--ant-segmented-track-padding: var(--ant-line-width-bold);
+		--ant-segmented-track-bg: var(--ant-color-bg-layout);
+		--ant-segmented-item-color: var(--ant-color-text-label);
+		--ant-segmented-item-hover-color: var(--ant-color-text);
+		--ant-segmented-item-hover-bg: var(--ant-color-fill-secondary);
+		--ant-segmented-item-selected-bg: var(--ant-color-bg-elevated);
+		--ant-segmented-item-active-bg: var(--ant-color-fill);
+		--ant-segmented-item-selected-color: var(--ant-color-text);
+	}
+}
+
+@layer components {
+	.segmented {
+
+		.segmented-group {
+			position: relative;
+			display: flex;
+			align-items: stretch;
+			justify-items: flex-start;
+			flex-direction: row;
+			width: 100%;
+		}
+
+		.segmented-item {
+			position: relative;
+			text-align: center;
+			cursor: pointer;
+			transition: color var(--ant-motion-duration-mid) var(--ant-motion-ease-in-out);
+			border-radius: var(--ant-border-radius-sm);
+			transform: translateZ(0);
+
+			&-input {
+				position: absolute;
+				inset-block-start: 0;
+				inset-inline-start: 0;
+				width: 0;
+				height: 0;
+				opacity: 0;
+				pointer-events: none;
+			}
+		}
+	}
+}
